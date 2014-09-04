@@ -587,6 +587,16 @@ body#home section.top-bar {
 #main-nav ul.menu li.with-sub-nav ul li a:after {
   content: "\f105";
 }
+#main-nav ul.menu li.with-sub-nav ul li.sub-nav-parent a {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 0px;
+}
+#main-nav ul.menu li.with-sub-nav ul li.sub-nav-parent ul.sub-menu a {
+  height: auto;
+  line-height: 25px;
+  padding-left: 40px;
+}
 #main-nav ul.menu li.sub-hover a:after {
   content: "\f105";
   font-family: FontAwesome;
