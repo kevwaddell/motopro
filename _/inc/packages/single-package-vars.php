@@ -5,5 +5,6 @@ $color = get_field('colour');
 $package_options = get_field('package_options');
 $fee_guilty = get_field('fee_guilty');
 $fee_not_guilty = get_field('fee_not_guilty');
+$parent = get_page($post->post_parent);
 //echo '<pre>';print_r($package_options);echo '</pre>';
  ?>

@@ -25,6 +25,10 @@
 <!--Quick Links end  -->
 
 <!-- Packages -->
+<?php include (STYLESHEETPATH . '/_/inc/home-page/services.php'); ?>
+<!--Packages end  -->
+
+<!-- Packages -->
 <?php include (STYLESHEETPATH . '/_/inc/home-page/packages.php'); ?>
 <!--Packages end  -->
 

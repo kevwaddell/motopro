@@ -15,6 +15,8 @@
 	<article <?php post_class(); ?>>
 		<h2><?php echo $news_page->post_title; ?></h2>
 		<?php echo $news_page_content ; ?>
+		
+		<a class="link-btn-sml icon-btn" title="Join our mailing list" href="<?php echo get_permalink($newsletter_pg->ID); ?>"><i class="fa fa-file-text fa-lg"></i>Sign up now </a>
 	</article>
 		
 	<?php get_sidebar(); ?>

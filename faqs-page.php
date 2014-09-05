@@ -117,7 +117,7 @@ ksort($related_qs);
 					<?php if (in_array($faq->ID, $related_qs_none)) { ?>
 	
 					 	<p class="question"><i class="fa fa-comment"></i> <?php echo $question; ?></p>
-						<p class="answer"><i class="fa fa-arrow-right"></i> <?php echo $answer; ?></p>
+						<p class="answer"><?php echo $answer; ?></p>
 	
 				 	<?php } ?>
 					 
@@ -141,7 +141,7 @@ ksort($related_qs);
 					 <div id="panel-<?php echo $key; ?>" class="collapse">
 						<?php foreach ($val as $item) { ?>
 						<p class="question"><i class="fa fa-comment"></i> <?php echo $item[q]; ?></p>
-						<p class="answer"><i class="fa fa-arrow-right"></i> <?php echo $item[a]; ?></p>
+						<p class="answer"><?php echo $item[a]; ?></p>
 					 	<?php } ?>
 					 </div>
 				</div>

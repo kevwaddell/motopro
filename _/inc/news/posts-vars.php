@@ -1,4 +1,5 @@
 <?php 
+$newsletter_pg = get_page_by_title("Join our mailing list");
 $news_page_id = get_option('page_for_posts');
 $news_page = get_page($news_page_id);
 $news_page_content_raw = $news_page->post_content;

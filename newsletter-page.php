@@ -21,26 +21,28 @@ $sb_links = get_field('sb_links');
 $brochure_link = get_field('brochure_link');	
 ?>	
 
-		<article>
+		<article <?php post_class(); ?>>
 			
-			<div class="row">
+			<div class="entry-txt with-borders" style="margin-bottom: 40px;">
+				<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+							<h2 class="text-center"><?php the_title(); ?></h2>
+										
+							<?php the_content(); ?>
+							
+							<?php if ($form) { ?>
 			
-				<div class="col-md-7 col-md-push-5 col-lg-8 col-lg-push-4">
-					
-					<h2><?php the_title(); ?></h2>
-					<?php the_content(); ?>
-					
-					<?php if ($form) { ?>
-					
-					<?php gravity_form($form->id, false, false, false, null, true); ?>
-					
-					<?php }  ?>
+							<?php gravity_form($form->id, false, false, false, null, true); ?>
 			
+							<?php }  ?>
+
+						</div>
 				</div>
-				
-			<div class="col-md-5 col-md-pull-7 col-lg-4 col-lg-pull-8">
+			</div>
 	
-				<div class="side-action-btns">
+		</article>
+		
+		<div class="side-action-btns">
 				<?php if (!empty($sb_links)) { ?>
 					
 				<?php foreach ($sb_links as $link) { ?>
@@ -56,14 +58,8 @@ $brochure_link = get_field('brochure_link');
 				<?php }  ?>
 
 				
-			</div>
-	
-	</div>
+		</div>
 
-				
-			</div>
-			
-		</article>
 <?php endwhile; ?>
 <?php endif; ?>
 

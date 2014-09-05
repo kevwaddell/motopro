@@ -46,7 +46,8 @@ div.content {
 			
 			&.with-span {
 				span {
-				.font-normal;	
+				.font-normal;
+				.col(@red);	
 				}
 				
 				&.col-green {
@@ -447,5 +448,64 @@ div.content {
 	
 	.modal-body {
 	.bg-col(@greyDk);	
+	}
+}
+
+/* TEAM PROFILE STYLES */
+
+.profile-box {
+.border(@grey; 0.2);
+.pad(2;2;1;2);	
+.mag-bot(2);
+//.bg-col(@grey30);
+	
+	@media (min-width: @screen-md) {
+	.pad(2;2;0;2);
+	}
+	
+	.profile-img {
+	.fleft;
+	.w(16);
+	.h(16);
+	.mag-right(2);
+	.mag-bot(1);
+	.pad-all(0.5);
+	.bg-col(@red);
+		img {
+		.block;	
+		width: 100%;
+		height: 100%;
+		}	
+	}
+	.pb-header {
+	.mag-bot(1);
+		h4 {
+		.col(@red);
+		.font-lite;
+		.font-size(2);
+		.caps;
+		.mag-bot(0);
+		}	
+		strong {
+		.col(@greyDk);	
+		}
+		
+		a {
+		.col(@red);
+		.block;
+		.no-text-dec;
+			
+			i {
+			.col(@grey);	
+			}
+		
+			&:hover, &:active, &:focus {
+			.col(@grey);
+				i {
+				.col(@red);	
+				}
+			}	
+	
+		}
 	}
 }

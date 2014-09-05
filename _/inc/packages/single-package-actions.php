@@ -7,13 +7,13 @@ $brochure_download = get_field('brochure_download');
 
 	<?php if (empty($brochure_download)) { ?>
 		
-		<a href="<?php echo get_permalink($contact_page->ID); ?>?service=<?php echo $package_name; ?>#callback-request" class="link-btn icon-btn col-<?php echo $color; ?>"><i class="fa fa-phone fa-lg"></i>Request a Callback</a>
+		<a href="<?php echo get_permalink($contact_page->ID); ?>?service=<?php echo urldecode($parent->post_title); ?>&package=<?php echo $package_name; ?>#callback-request" class="link-btn icon-btn col-<?php echo $color; ?>"><i class="fa fa-phone fa-lg"></i>Request a Callback</a>
 		
 	<?php } else { ?>
 	
 	<div class="row">
 		<div class="col-md-6">
-			<a href="<?php echo get_permalink($contact_page->ID); ?>?service=<?php echo $package_name; ?>#callback-request" class="link-btn icon-btn col-<?php echo $color; ?>"><i class="fa fa-phone fa-lg"></i>Request a Callback</a>
+			<a href="<?php echo get_permalink($contact_page->ID); ?>?service=<?php echo urldecode($parent->post_title); ?>&package=<?php echo $package_name; ?>#callback-request" class="link-btn icon-btn col-<?php echo $color; ?>"><i class="fa fa-phone fa-lg"></i>Request a Callback</a>
 		</div>
 		
 		<div class="col-md-6">

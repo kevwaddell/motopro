@@ -93,7 +93,16 @@ text-align: center;
 .content .gform_wrapper {
 max-width: 100% !important;
 .mag-all(0) !important;
-
+	
+	.gform_body ul {
+	.pad-left(0);
+		li {
+		.pad-left(0);	
+			&:before {
+			content: none;	
+			}
+		}	
+	}
 	.ginput_complex .ginput_left {
 	width: 100%;
 	
@@ -241,8 +250,8 @@ max-width: 100% !important;
 		.font-size(2);
 			
 			@media (min-width: @screen-md) {
-			.left(30.1);
-			right: auto;
+			//.left(30.1);
+			//right: auto;
 			}
 				
 		}
@@ -263,7 +272,7 @@ max-width: 100% !important;
 
 		
 			@media (min-width: @screen-md) {
-			.max-w(34);
+			//.max-w(34);
 			}
 			
 			&:hover, &:active, &:focus {

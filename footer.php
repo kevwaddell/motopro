@@ -12,7 +12,7 @@
 				<div class="container">
 					 <div class="row">
 					 	<div class="col-sm-6 col-md-3">
-						 <h3 class="first-head">Packages</h3>
+						 <h3 class="first-head">Services</h3>
 						 <?php wp_nav_menu(array( 
 							'container' => 'false', 
 							'menu' => 'Packages Footer Menu', 

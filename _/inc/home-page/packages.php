@@ -8,9 +8,9 @@ $packages_args = array(
 $packages = get_pages($packages_args);
 //echo '<pre>';print_r($packages);echo '</pre>';
  ?>
-<section id="home-packages">
+<section id="home-packages" class="home-panel">
 
-	<h3 class="text-center"><span><?php echo $packages_page->post_title; ?></span></h3>
+	<h3 class="text-center"><span>Our <?php echo $packages_page->post_title; ?></span></h3>
 	
 	<div class="row">
 	
