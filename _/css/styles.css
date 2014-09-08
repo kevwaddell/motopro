@@ -2123,6 +2123,10 @@ section.package-options .package-list .package-list-item a {
   text-align: center;
   text-decoration: none;
   margin-left: 25px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   /* Colours */
 
 }
@@ -2168,6 +2172,10 @@ section.package-options .package-list .package-list-item a {
   background-size: 80% 80%;
   background-position: center center;
   background-color: #a1a4a7;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .fee-info-box ul.packages li a span.link-icon span.icon-inner,
@@ -2226,6 +2234,20 @@ section.package-options .package-list .package-list-item a {
 .fee-info-box ul.packages li a:focus,
 .packages-info-box ul.packages li a:focus {
   background-color: #6d7175;
+}
+@media (min-width: 992px) {
+  .fee-info-box ul.packages li a:hover span.icon-inner,
+  .packages-info-box ul.packages li a:hover span.icon-inner,
+  .fee-info-box ul.packages li a:active span.icon-inner,
+  .packages-info-box ul.packages li a:active span.icon-inner,
+  .fee-info-box ul.packages li a:focus span.icon-inner,
+  .packages-info-box ul.packages li a:focus span.icon-inner {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
 }
 .fee-info-box ul.packages li a.col-green,
 .packages-info-box ul.packages li a.col-green {

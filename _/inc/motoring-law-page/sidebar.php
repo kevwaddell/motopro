@@ -18,7 +18,7 @@ $packages = get_pages('sort_column=menu_order&child_of='.$packages_pg->ID);
 		<li>
 			<a href="<?php echo get_permalink($package->ID); ?>" title="<?php echo $package->post_title; ?>" class="col-<?php echo $color; ?>">
 				<span class="link-icon"><span class="icon-inner"></span></span>
-				<span class="tag"><?php bloginfo('name'); ?><span class="name"><?php echo $package_name; ?></span></span>
+				<span class="tag"><?php bloginfo('name'); ?></span><span class="name"><?php echo $package_name; ?></span>
 			</a>
 		</li>
 		<?php } ?>
