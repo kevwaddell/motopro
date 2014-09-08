@@ -1,3 +1,13 @@
+body#services {
+	.home-panel {
+	.mag-bot(2);
+	
+		@media (min-width: @screen-md) {
+		.mag-bot(3);
+		}
+	}
+}
+
 .home-panel {
 .border(@grey, 0.3);
 .pad(2;1;0;1);
@@ -882,10 +892,16 @@ section.package-options {
 }
 
 /* TAXI LICENSING FEE BOX */
-.fee-info-box {
-.mag-top(2);
+.fee-info-box, .packages-info-box {
+.mag-top(3);
 .border(@grey; 0.2);
-.pad(0;2;0;2);	
+.pad(0;2;1;2);	
+.mag-bot(2);
+	
+	@media (min-width: @screen-md) {
+	.mag-top(2);
+	}
+	
 	h3 {
 	.caps;
 	.bg-col(@greyDk);
@@ -929,6 +945,161 @@ section.package-options {
 			.bg-col(@red);
 			}
 		
+		}
+		
+		&.packages {
+			li {
+			.no-border;	
+			.mag-bot(1);
+			.pad-bot(0);
+			.pad-left(0);
+			
+				a {
+				.block;
+				.bg-col(@grey);
+				.h(5);
+				.line-h(5);
+				.font-size(2);
+				text-align: center;
+				.no-text-dec;
+				.mag-left(2.5);
+				
+					@media (min-width: @screen-sm) {
+					.font-size(2.5);
+					}
+				
+					@media (min-width: @screen-md) {
+					.h(9);
+					.line-h(2.5);
+					.mag-left(4.5);
+					}
+
+					span.link-icon {
+					.fleft;	
+					.mag-left(-2.5);
+					.h(5);
+					.w(5);
+					.rounded(25px);
+					.pad-all(0.7);
+					.bg-col(@greyDker);
+						span.icon-inner {
+						.block;
+						width: 100%;
+						height: 100%;
+						.rounded(20px);
+						.bg-img-x2("inner-icon.png");
+						.bg-repeat(no-repeat);
+						.bg-size(80% 80%);	
+						background-position: center center; 
+						.bg-col(@grey);
+						}
+						
+						@media (min-width: @screen-md) {
+						.h(9);
+						.w(9);
+						.mag-left(-4.5);
+						.rounded(45px);
+						.pad-all(1);
+							span.icon-inner {
+							.rounded(40px);
+							}
+						}
+					}
+					
+					span.tag {
+					.no-caps;
+					.col(@grey50);
+					.font-lite;
+						@media (min-width: @screen-md) {
+						.block;
+						.pad-top(1.8);
+						}
+					}
+					
+					span.name {
+					.caps;
+					.col(white);
+						@media (min-width: @screen-md) {
+						.block;
+						}
+					}	
+					
+					&:hover, &:active, &:focus {
+					.bg-col(darken(@grey, 20%));	
+					}
+					
+					/* Colours */
+					&.col-green {
+					.bg-col(@green);
+						span.link-icon {
+							span.icon-inner {
+							.bg-col(@green);
+							}
+						}
+						
+						span.tag { 
+						.col(@green50);	
+						}
+						
+						&:hover, &:active, &:focus {
+							.bg-col(@green80);	
+							
+							span.link-icon span.icon-inner {
+								.bg-col(@green80);
+							}
+
+						}	
+					}
+					
+					&.col-blue {
+					.bg-col(@blue);	
+						span.link-icon {
+							span.icon-inner {
+							.bg-col(@blue);
+							}
+						}
+						
+						span.tag { 
+						.col(@blue50);	
+						}
+						
+						&:hover, &:active, &:focus {
+							.bg-col(@blue80);	
+			
+							span.link-icon span.icon-inner {
+								.bg-col(@blue80);
+							}
+
+						}	
+					}
+					
+					&.col-orange {
+					.bg-col(@orange);
+						span.link-icon {
+							span.icon-inner {
+							.bg-col(@orange);
+							}
+						}
+						
+						span.tag { 
+						.col(@orange50);	
+						}
+						
+						&:hover, &:active, &:focus {
+							.bg-col(@orange80);	
+			
+							span.link-icon span.icon-inner {
+								.bg-col(@orange80);
+							}
+
+						}	
+	
+					}
+					/* Colours */
+					
+					
+				}
+			}	
 		}
 	}
 	

@@ -24,9 +24,13 @@
 				
 		</section>
 		
-		<!-- Quick Links -->
-		<?php include (STYLESHEETPATH . '/_/inc/home-page/packages.php'); ?>
-		<!--Quick Links end  -->
+		<!-- Services -->
+		<?php include (STYLESHEETPATH . '/_/inc/services-page/services.php'); ?>
+		<!--Services end  -->
+		
+		<!-- Packages Links -->
+		<?php include (STYLESHEETPATH . '/_/inc/services-page/packages.php'); ?>
+		<!--Packages Links end  -->
 		
 		<!-- Quick Links -->
 		<?php include (STYLESHEETPATH . '/_/inc/packages/quick-links.php'); ?>

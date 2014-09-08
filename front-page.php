@@ -24,9 +24,9 @@
 <?php include (STYLESHEETPATH . '/_/inc/global/quick-links.php'); ?>
 <!--Quick Links end  -->
 
-<!-- Packages -->
+<!-- Services -->
 <?php include (STYLESHEETPATH . '/_/inc/home-page/services.php'); ?>
-<!--Packages end  -->
+<!--Services end  -->
 
 <!-- Packages -->
 <?php include (STYLESHEETPATH . '/_/inc/home-page/packages.php'); ?>

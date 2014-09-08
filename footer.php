@@ -5,6 +5,11 @@
 		<!-- FOOTER START -->
 		<div class="footer-info">
 		
+		<?php
+		$services_pg = get_page_by_title("Services");
+		$packages_pg = get_page_by_title("Packages");
+		 ?>
+		
 		<div class="footer-icon"></div>
 		
 			<footer>
@@ -12,13 +17,22 @@
 				<div class="container">
 					 <div class="row">
 					 	<div class="col-sm-6 col-md-3">
-						 <h3 class="first-head">Services</h3>
-						 <?php wp_nav_menu(array( 
-							'container' => 'false', 
-							'menu' => 'Packages Footer Menu', 
-							'menu_class'  => 'footer-nav list-unstyled',
-							'fallback_cb' => false ) ); 
-						 ?>
+					 		<div class="footer-menu-left">
+								 <h3 class="left-head"><a href="<?php echo get_permalink($services_pg->ID); ?>" title="View <?php echo $services_pg->post_title; ?>"><?php echo $services_pg->post_title; ?></a></h3>
+								 <?php wp_nav_menu(array( 
+									'container' => 'false', 
+									'menu' => 'Services Footer Menu', 
+									'menu_class'  => 'footer-nav list-unstyled',
+									'fallback_cb' => false ) ); 
+								 ?>
+								  <h3 class="left-head"><a href="<?php echo get_permalink($packages_pg->ID); ?>" title="View <?php echo $packages_pg->post_title; ?>"><?php echo $packages_pg->post_title; ?></a></h3>
+								 <?php wp_nav_menu(array( 
+									'container' => 'false', 
+									'menu' => 'Packages Footer Menu', 
+									'menu_class'  => 'footer-nav list-unstyled',
+									'fallback_cb' => false ) ); 
+								 ?>
+					 		</div>
 					 	</div>
 					 	<div class="col-sm-6 col-md-3">
 					 	<h3>General</h3>

@@ -217,7 +217,7 @@ body {
 /* --------------------------- */
 html {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   margin-top: 0px !important;
 }
 pre {
@@ -232,7 +232,6 @@ pre {
 body {
   position: relative;
   width: 100%;
-  height: 100%;
   min-height: 100%;
   min-width: 100%;
   padding: 0px;
@@ -1117,6 +1116,14 @@ body#home section.top-bar {
   }
   #home-slider .slider-item .slider-img#slider-img-4 {
     background-image: url(img/x2/slider-img-4.jpg);
+  }
+}
+body#services .home-panel {
+  margin-bottom: 20px;
+}
+@media (min-width: 992px) {
+  body#services .home-panel {
+    margin-bottom: 30px;
   }
 }
 .home-panel {
@@ -2027,12 +2034,21 @@ section.package-options .package-list .package-list-item a {
   background-color: #e8841e;
 }
 /* TAXI LICENSING FEE BOX */
-.fee-info-box {
-  margin-top: 20px;
+.fee-info-box,
+.packages-info-box {
+  margin-top: 30px;
   border: 2px solid #a1a4a7;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 20px 10px 20px;
+  margin-bottom: 20px;
 }
-.fee-info-box h3 {
+@media (min-width: 992px) {
+  .fee-info-box,
+  .packages-info-box {
+    margin-top: 20px;
+  }
+}
+.fee-info-box h3,
+.packages-info-box h3 {
   text-transform: uppercase;
   background-color: #4b565c;
   color: #ffffff;
@@ -2042,11 +2058,13 @@ section.package-options .package-list .package-list-item a {
   font-size: 20px;
   margin-top: -20px;
 }
-.fee-info-box strong {
+.fee-info-box strong,
+.packages-info-box strong {
   display: block;
   margin-bottom: 10px;
 }
-.fee-info-box ul li {
+.fee-info-box ul li,
+.packages-info-box ul li {
   margin-bottom: 5px;
   padding-bottom: 5px;
   padding-left: 25px;
@@ -2054,7 +2072,8 @@ section.package-options .package-list .package-list-item a {
   min-height: 20px;
   position: relative;
 }
-.fee-info-box ul .icon {
+.fee-info-box ul .icon,
+.packages-info-box ul .icon {
   float: left;
   width: 20px;
   height: 20px;
@@ -2065,7 +2084,8 @@ section.package-options .package-list .package-list-item a {
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-.fee-info-box ul .icon .icon-inner {
+.fee-info-box ul .icon .icon-inner,
+.packages-info-box ul .icon .icon-inner {
   width: 100%;
   height: 100%;
   -webkit-border-radius: 10px;
@@ -2081,24 +2101,233 @@ section.package-options .package-list .package-list-item a {
   background-color: #ea5777;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .fee-info-box ul .icon .icon-inner {
+  .fee-info-box ul .icon .icon-inner,
+  .packages-info-box ul .icon .icon-inner {
     background-image: url(img/x2/inner-icon-sm.png);
   }
 }
-.fee-info-box .fee-price {
+.fee-info-box ul.packages li,
+.packages-info-box ul.packages li {
+  border: none;
+  margin-bottom: 10px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+.fee-info-box ul.packages li a,
+.packages-info-box ul.packages li a {
+  display: block;
+  background-color: #a1a4a7;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 25px;
+  /* Colours */
+
+}
+@media (min-width: 768px) {
+  .fee-info-box ul.packages li a,
+  .packages-info-box ul.packages li a {
+    font-size: 25px;
+  }
+}
+@media (min-width: 992px) {
+  .fee-info-box ul.packages li a,
+  .packages-info-box ul.packages li a {
+    height: 90px;
+    line-height: 25px;
+    margin-left: 45px;
+  }
+}
+.fee-info-box ul.packages li a span.link-icon,
+.packages-info-box ul.packages li a span.link-icon {
+  float: left;
+  margin-left: -25px;
+  height: 50px;
+  width: 50px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  padding: 7px;
+  background-color: #242a2c;
+}
+.fee-info-box ul.packages li a span.link-icon span.icon-inner,
+.packages-info-box ul.packages li a span.link-icon span.icon-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background-image: url(img/inner-icon.png);
+  background-repeat: no-repeat;
+  -webkit-background-size: 80% 80%;
+  -moz-background-size: 80% 80%;
+  -o-background-size: 80% 80%;
+  background-size: 80% 80%;
+  background-position: center center;
+  background-color: #a1a4a7;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .fee-info-box ul.packages li a span.link-icon span.icon-inner,
+  .packages-info-box ul.packages li a span.link-icon span.icon-inner {
+    background-image: url(img/x2/inner-icon.png);
+  }
+}
+@media (min-width: 992px) {
+  .fee-info-box ul.packages li a span.link-icon,
+  .packages-info-box ul.packages li a span.link-icon {
+    height: 90px;
+    width: 90px;
+    margin-left: -45px;
+    -webkit-border-radius: 45px;
+    -moz-border-radius: 45px;
+    border-radius: 45px;
+    padding: 10px;
+  }
+  .fee-info-box ul.packages li a span.link-icon span.icon-inner,
+  .packages-info-box ul.packages li a span.link-icon span.icon-inner {
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+  }
+}
+.fee-info-box ul.packages li a span.tag,
+.packages-info-box ul.packages li a span.tag {
+  text-transform: none;
+  color: #d0d2d2;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", 'open_sanslight', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-stretch: normal;
+}
+@media (min-width: 992px) {
+  .fee-info-box ul.packages li a span.tag,
+  .packages-info-box ul.packages li a span.tag {
+    display: block;
+    padding-top: 18px;
+  }
+}
+.fee-info-box ul.packages li a span.name,
+.packages-info-box ul.packages li a span.name {
+  text-transform: uppercase;
+  color: #ffffff;
+}
+@media (min-width: 992px) {
+  .fee-info-box ul.packages li a span.name,
+  .packages-info-box ul.packages li a span.name {
+    display: block;
+  }
+}
+.fee-info-box ul.packages li a:hover,
+.packages-info-box ul.packages li a:hover,
+.fee-info-box ul.packages li a:active,
+.packages-info-box ul.packages li a:active,
+.fee-info-box ul.packages li a:focus,
+.packages-info-box ul.packages li a:focus {
+  background-color: #6d7175;
+}
+.fee-info-box ul.packages li a.col-green,
+.packages-info-box ul.packages li a.col-green {
+  background-color: #157b80;
+}
+.fee-info-box ul.packages li a.col-green span.link-icon span.icon-inner,
+.packages-info-box ul.packages li a.col-green span.link-icon span.icon-inner {
+  background-color: #157b80;
+}
+.fee-info-box ul.packages li a.col-green span.tag,
+.packages-info-box ul.packages li a.col-green span.tag {
+  color: #8abdbf;
+}
+.fee-info-box ul.packages li a.col-green:hover,
+.packages-info-box ul.packages li a.col-green:hover,
+.fee-info-box ul.packages li a.col-green:active,
+.packages-info-box ul.packages li a.col-green:active,
+.fee-info-box ul.packages li a.col-green:focus,
+.packages-info-box ul.packages li a.col-green:focus {
+  background-color: #449699;
+}
+.fee-info-box ul.packages li a.col-green:hover span.link-icon span.icon-inner,
+.packages-info-box ul.packages li a.col-green:hover span.link-icon span.icon-inner,
+.fee-info-box ul.packages li a.col-green:active span.link-icon span.icon-inner,
+.packages-info-box ul.packages li a.col-green:active span.link-icon span.icon-inner,
+.fee-info-box ul.packages li a.col-green:focus span.link-icon span.icon-inner,
+.packages-info-box ul.packages li a.col-green:focus span.link-icon span.icon-inner {
+  background-color: #449699;
+}
+.fee-info-box ul.packages li a.col-blue,
+.packages-info-box ul.packages li a.col-blue {
+  background-color: #0082c7;
+}
+.fee-info-box ul.packages li a.col-blue span.link-icon span.icon-inner,
+.packages-info-box ul.packages li a.col-blue span.link-icon span.icon-inner {
+  background-color: #0082c7;
+}
+.fee-info-box ul.packages li a.col-blue span.tag,
+.packages-info-box ul.packages li a.col-blue span.tag {
+  color: #7fc0e3;
+}
+.fee-info-box ul.packages li a.col-blue:hover,
+.packages-info-box ul.packages li a.col-blue:hover,
+.fee-info-box ul.packages li a.col-blue:active,
+.packages-info-box ul.packages li a.col-blue:active,
+.fee-info-box ul.packages li a.col-blue:focus,
+.packages-info-box ul.packages li a.col-blue:focus {
+  background-color: #339bd2;
+}
+.fee-info-box ul.packages li a.col-blue:hover span.link-icon span.icon-inner,
+.packages-info-box ul.packages li a.col-blue:hover span.link-icon span.icon-inner,
+.fee-info-box ul.packages li a.col-blue:active span.link-icon span.icon-inner,
+.packages-info-box ul.packages li a.col-blue:active span.link-icon span.icon-inner,
+.fee-info-box ul.packages li a.col-blue:focus span.link-icon span.icon-inner,
+.packages-info-box ul.packages li a.col-blue:focus span.link-icon span.icon-inner {
+  background-color: #339bd2;
+}
+.fee-info-box ul.packages li a.col-orange,
+.packages-info-box ul.packages li a.col-orange {
+  background-color: #e8841e;
+}
+.fee-info-box ul.packages li a.col-orange span.link-icon span.icon-inner,
+.packages-info-box ul.packages li a.col-orange span.link-icon span.icon-inner {
+  background-color: #e8841e;
+}
+.fee-info-box ul.packages li a.col-orange span.tag,
+.packages-info-box ul.packages li a.col-orange span.tag {
+  color: #f3c18e;
+}
+.fee-info-box ul.packages li a.col-orange:hover,
+.packages-info-box ul.packages li a.col-orange:hover,
+.fee-info-box ul.packages li a.col-orange:active,
+.packages-info-box ul.packages li a.col-orange:active,
+.fee-info-box ul.packages li a.col-orange:focus,
+.packages-info-box ul.packages li a.col-orange:focus {
+  background-color: #ec9c4a;
+}
+.fee-info-box ul.packages li a.col-orange:hover span.link-icon span.icon-inner,
+.packages-info-box ul.packages li a.col-orange:hover span.link-icon span.icon-inner,
+.fee-info-box ul.packages li a.col-orange:active span.link-icon span.icon-inner,
+.packages-info-box ul.packages li a.col-orange:active span.link-icon span.icon-inner,
+.fee-info-box ul.packages li a.col-orange:focus span.link-icon span.icon-inner,
+.packages-info-box ul.packages li a.col-orange:focus span.link-icon span.icon-inner {
+  background-color: #ec9c4a;
+}
+.fee-info-box .fee-price,
+.packages-info-box .fee-price {
   text-align: center;
   border-bottom: 1px solid #a1a4a7;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
-.fee-info-box .fee-price span {
+.fee-info-box .fee-price span,
+.packages-info-box .fee-price span {
   display: block;
   text-transform: uppercase;
   font-size: 20px;
   line-height: 15px;
   color: #a1a4a7;
 }
-.fee-info-box .fee-price p {
+.fee-info-box .fee-price p,
+.packages-info-box .fee-price p {
   font-size: 35px;
   line-height: 35px;
   color: #ea5777;
@@ -2107,7 +2336,8 @@ section.package-options .package-list .package-list-item a {
   font-stretch: normal;
   margin-bottom: 0px;
 }
-.fee-info-box .extra-txt {
+.fee-info-box .extra-txt,
+.packages-info-box .extra-txt {
   font-weight: bold;
   color: #ea5777;
 }
@@ -2995,7 +3225,7 @@ div.content article.page h2.with-span.col-orange span {
   color: #e8841e;
 }
 div.content article.page .entry-txt {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 @media (min-width: 992px) {
   div.content article.page .entry-txt.with-borders {
@@ -3167,7 +3397,7 @@ div.content article.post h6 {
   div.content article.post h5,
   div.content article.page h6,
   div.content article.post h6 {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 @media (min-width: 1200px) {
@@ -3179,7 +3409,7 @@ div.content article.post h6 {
   div.content article.post h5,
   div.content article.page h6,
   div.content article.post h6 {
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 div.content article.home-page {
@@ -4464,18 +4694,26 @@ form.protected-post-form .btn:focus {
   -moz-osx-font-smoothing: subpixel-antialiased;
   margin-bottom: 5px;
 }
+.footer-info h3 a {
+  color: #a1a4a7;
+}
+.footer-info h3 a:hover,
+.footer-info h3 a:active,
+.footer-info h3 a:focus {
+  color: #ea5777;
+}
 @media (min-width: 768px) {
   .footer-info h3 {
     font-size: 16px;
   }
 }
 @media (min-width: 768px) {
-  .footer-info h3.first-head {
+  .footer-info h3.left-head {
     text-align: right;
   }
 }
 @media (min-width: 992px) {
-  .footer-info h3.first-head {
+  .footer-info h3.left-head {
     text-align: left;
   }
 }
@@ -4496,26 +4734,37 @@ form.protected-post-form .btn:focus {
 @media (min-width: 768px) {
   .footer-info small.copyright {
     display: block;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ffffff;
     text-align: center;
   }
 }
 @media (min-width: 992px) {
-  .footer-info small.copyright {
-    text-align: left;
+  
+}
+@media (min-width: 768px) {
+  .footer-info .footer-menu-left {
+    float: right;
+  }
+}
+@media (min-width: 992px) {
+  .footer-info .footer-menu-left {
+    float: none;
   }
 }
 .footer-info ul.footer-nav {
   margin-bottom: 20px;
 }
 @media (min-width: 768px) {
-  .footer-info ul.footer-nav#menu-packages-footer-menu {
-    float: right;
+  .footer-info ul.footer-nav#menu-packages-footer-menu,
+  .footer-info ul.footer-nav#menu-services-footer-menu {
     text-align: right;
   }
 }
 @media (min-width: 992px) {
-  .footer-info ul.footer-nav#menu-packages-footer-menu {
-    float: none;
+  .footer-info ul.footer-nav#menu-packages-footer-menu,
+  .footer-info ul.footer-nav#menu-services-footer-menu {
     text-align: left;
   }
 }
@@ -4525,7 +4774,7 @@ form.protected-post-form .btn:focus {
 }
 @media (min-width: 768px) {
   .footer-info ul.footer-social-nav {
-    margin-top: 25px;
+    margin-top: 55px;
   }
 }
 @media (min-width: 992px) {
@@ -4583,7 +4832,7 @@ form.protected-post-form .btn:focus {
 @media (min-width: 768px) {
   .footer-info .footer-logo {
     float: right;
-    margin-top: -50px;
+    margin-top: -20px;
   }
   .footer-info .footer-logo small {
     display: block;

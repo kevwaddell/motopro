@@ -38,6 +38,7 @@ if ( function_exists( 'register_nav_menus' ) ) {
 		register_nav_menus(
 			array(
 			  'package_links_menu' => 'Packages Menu',
+			  'service_links_menu' => 'Services Menu',
 			  'social_links_menu' => 'Footer Social Links',
 			)
 		);

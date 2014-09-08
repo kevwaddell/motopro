@@ -9,6 +9,17 @@ $packages_args = array(
 
 $packages = get_pages($packages_args);
 
+$services_page = get_page_by_title('Services');
+
+$services_args = array(
+'sort_column'		=> 'menu_order',
+'parent' => $services_page->ID,
+'exclude'	=> $packages_page->ID,
+'sort_order' => 'ASC'
+);
+
+$services = get_pages($services_args);
+
 $offences_page = get_page_by_title('Motoring Offences');
 
 $offences_args = array(

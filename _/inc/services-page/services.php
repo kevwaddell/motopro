@@ -8,7 +8,7 @@ $services_args = array(
 'post_type' => 'page'
 );
 $services = get_pages($services_args);
-//echo '<pre>';print_r($services);echo '</pre>';
+//echo '<pre>';print_r($packages);echo '</pre>';
  ?>
 <section id="home-services" class="home-panel">
 
