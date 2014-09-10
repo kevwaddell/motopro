@@ -2,7 +2,6 @@
 $prem_pos = array();
 $exec_pos = array();
 $ult_pos = array();
-
 //echo '<pre>';print_r($packages);echo '</pre>';
 
 
@@ -99,7 +98,26 @@ echo '</pre>';
 	</tbody>
 	<tfoot>
 		<tr>
-			<td class="table-info"><small>*Meeting location requests may be declined if it is felt the location may pose a risk to the health and safety of the MotoPro employee or agent.</small></td>
+			<td class="table-price">Guilty Plea / Appeal Sentence</td>
+			<?php foreach ($packages as $package) { 
+			$color = get_field('colour', $package->ID);
+			$fee_guilty = get_field('fee_guilty', $package->ID);
+			
+			?>
+			<td class="package-footer-price col-<?php echo $color; ?>">&pound;<?php echo $fee_guilty; ?></td>
+			<?php } ?>
+		</tr>
+		<tr>
+			<td class="table-price">Not Guilty Plea / Appeal Conviction</td>
+			<?php foreach ($packages as $package) { 
+			$color = get_field('colour', $package->ID);
+			$fee_not_guilty = get_field('fee_not_guilty', $package->ID);
+			?>
+			<td class="package-footer-price col-<?php echo $color; ?>">&pound;<?php echo $fee_not_guilty; ?></td>
+			<?php } ?>
+		</tr>
+		<tr>
+			<td class="table-info"><small><?php echo $location_note; ?></small></td>
 			<?php foreach ($packages as $package) { 
 			$color = get_field('colour', $package->ID);
 			?>

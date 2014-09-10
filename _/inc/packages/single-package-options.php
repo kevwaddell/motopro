@@ -19,15 +19,29 @@
 			
 			</ul>
 			
-			<?php if ($post->post_name == "motopro-ultimate") { ?>
-			<small>*Meeting location requests may be declined if it is felt the location may pose a risk to the health and safety of the MP employee or agent.</small>
+			<?php if ($location_note) { ?>
+			<small><?php echo $location_note; ?></small>
 			<?php } ?>
 			
 			<?php if ($fee_guilty || $fee_not_guilty) { ?>
 		
-			<div class="fee-box"><?php echo ($fee_guilty) ? "Guilty Plea &pound;".$fee_guilty:""; ?><?php echo ($fee_guilty&&$fee_not_guilty) ? "<span>|</span>":""; ?><?php echo ($fee_not_guilty) ? "Not Guilty Plea &pound;".$fee_not_guilty:""; ?></div>
+			<div class="fee-box">
+			
+				<?php if ($fee_guilty) { ?>
+				<p>Guilty Plea / Appeal Sentence: <span class="price">&pound;<?php echo $fee_guilty; ?></span></p>
+				<?php }  ?>
+				
+				<?php if ($fee_guilty&&$fee_not_guilty) { ?>
+				<span class="rule"></span>
+				<?php }  ?>
+				
+				<?php if ($fee_not_guilty) { ?>
+				<p>Not Guilty Plea / Appeal Conviction: <span class="price">&pound;<?php echo $fee_not_guilty; ?></span></p>
+				<?php }  ?>
+			
+			</div>
 	
-	<?php } ?>
+			<?php } ?>
 		
 		</div>
 	

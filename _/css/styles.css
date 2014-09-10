@@ -217,6 +217,7 @@ body {
 /* --------------------------- */
 html {
   width: 100%;
+  height: 100%;
   min-height: 100%;
   margin-top: 0px !important;
 }
@@ -232,6 +233,7 @@ pre {
 body {
   position: relative;
   width: 100%;
+  height: 100%;
   min-height: 100%;
   min-width: 100%;
   padding: 0px;
@@ -1639,7 +1641,7 @@ section.package-options table tbody td.col-blue .icon-inner {
 section.package-options table tbody td.col-orange .icon-inner {
   background-color: #e8841e;
 }
-section.package-options table tfoot {
+section.package-options table tfoot tr {
   border-bottom: 1px solid #a1a4a7;
 }
 section.package-options table tfoot td.table-info {
@@ -1651,6 +1653,28 @@ section.package-options table tfoot td.table-info small {
   color: #4b565c;
   font-size: 12px;
   line-height: 14px;
+}
+section.package-options table tfoot td.table-price {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  background-color: #4b565c;
+  font-weight: bold;
+  color: #ffffff;
+}
+section.package-options table tfoot td.package-footer-price {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+section.package-options table tfoot td.package-footer-price.col-green {
+  color: #157b80;
+}
+section.package-options table tfoot td.package-footer-price.col-blue {
+  color: #0082c7;
+}
+section.package-options table tfoot td.package-footer-price.col-orange {
+  color: #e8841e;
 }
 section.package-options table tfoot td.package-footer {
   text-align: center;
@@ -1825,6 +1849,28 @@ section.package-options .package-list .package-list-item li .icon .icon-inner {
     background-image: url(img/x2/inner-icon-sm.png);
   }
 }
+section.package-options .package-list .package-list-item .fee-box {
+  background-color: #e2e3e4;
+  padding: 10px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+section.package-options .package-list .package-list-item .fee-box p {
+  margin-bottom: 0px;
+}
+section.package-options .package-list .package-list-item .fee-box span.price {
+  display: block;
+  font-size: 20px;
+}
+section.package-options .package-list .package-list-item .fee-box span.rule {
+  display: block;
+  height: 1px;
+  background-color: #a1a4a7;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
 section.package-options .package-list .package-list-item.col-green h4 {
   background-color: #157b80;
   color: #8abdbf;
@@ -1840,6 +1886,12 @@ section.package-options .package-list .package-list-item.col-green a:active,
 section.package-options .package-list .package-list-item.col-green a:focus {
   background-color: #8abdbf;
 }
+section.package-options .package-list .package-list-item.col-green .fee-box p {
+  color: #449699;
+}
+section.package-options .package-list .package-list-item.col-green .fee-box span.price {
+  color: #157b80;
+}
 section.package-options .package-list .package-list-item.col-blue h4 {
   background-color: #0082c7;
   color: #7fc0e3;
@@ -1854,6 +1906,12 @@ section.package-options .package-list .package-list-item.col-blue a:hover,
 section.package-options .package-list .package-list-item.col-blue a:active,
 section.package-options .package-list .package-list-item.col-blue a:focus {
   background-color: #7fc0e3;
+}
+section.package-options .package-list .package-list-item.col-blue .fee-box p {
+  color: #339bd2;
+}
+section.package-options .package-list .package-list-item.col-blue .fee-box span.price {
+  color: #0082c7;
 }
 section.package-options .package-list .package-list-item.col-orange {
   margin-bottom: 0px;
@@ -1873,6 +1931,12 @@ section.package-options .package-list .package-list-item.col-orange a:active,
 section.package-options .package-list .package-list-item.col-orange a:focus {
   background-color: #f3c18e;
 }
+section.package-options .package-list .package-list-item.col-orange .fee-box p {
+  color: #ec9c4a;
+}
+section.package-options .package-list .package-list-item.col-orange .fee-box span.price {
+  color: #e8841e;
+}
 section.package-options .package-list .package-list-item a {
   display: block;
   color: #ffffff;
@@ -1883,13 +1947,13 @@ section.package-options .package-list .package-list-item a {
   text-decoration: none;
 }
 .sgl-package-options {
-  border: 3px solid #a1a4a7;
+  border: 2px solid #a1a4a7;
   padding: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 @media (min-width: 992px) {
   .sgl-package-options {
-    margin-bottom: 70px;
+    border: 3px solid #a1a4a7;
   }
 }
 .sgl-package-options h3 {
@@ -1917,53 +1981,49 @@ section.package-options .package-list .package-list-item a {
   }
 }
 .sgl-package-options .fee-box {
-  text-transform: uppercase;
   text-align: center;
-  font-size: 16px;
-  margin-bottom: -55px;
-  color: #ffffff;
-  padding: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #a1a4a7;
+  font-weight: bold;
 }
-.sgl-package-options .fee-box span {
+.sgl-package-options .fee-box p {
+  margin-bottom: 0px;
+}
+.sgl-package-options .fee-box span.rule {
   display: block;
   text-indent: -9999px;
   height: 1px;
-  background-color: #ffffff;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  background-color: #a1a4a7;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.sgl-package-options .fee-box span.price {
+  display: block;
+  font-size: 20px;
 }
 @media (min-width: 768px) {
   .sgl-package-options .fee-box {
-    padding: 0px;
-    height: 40px;
-    line-height: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: -40px;
+    font-size: 16px;
+    text-align: left;
   }
-  .sgl-package-options .fee-box span {
-    padding: 0px 10px 0px 10px;
+  .sgl-package-options .fee-box span.price {
+    font-size: 16px;
     display: inline;
-    height: auto;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    background-color: transparent;
   }
 }
 @media (min-width: 992px) {
   .sgl-package-options .fee-box {
-    height: 50px;
-    line-height: 50px;
+    line-height: 25px;
     font-size: 20px;
-    margin-bottom: -45px;
+  }
+  .sgl-package-options .fee-box span.price {
+    font-size: 20px;
+    display: inline;
   }
 }
 @media (min-width: 1200px) {
-  .sgl-package-options .fee-box {
-    height: 60px;
-    line-height: 60px;
-    margin-bottom: -50px;
-  }
+  
 }
 .sgl-package-options ul {
   margin-bottom: 20px;
@@ -2019,26 +2079,41 @@ section.package-options .package-list .package-list-item a {
   text-align: center;
 }
 .sgl-package-options.col-green h3,
-.sgl-package-options.col-green .icon-inner,
-.sgl-package-options.col-green .fee-box {
+.sgl-package-options.col-green .icon-inner {
   background-color: #157b80;
 }
+.sgl-package-options.col-green .fee-box {
+  color: #449699;
+}
+.sgl-package-options.col-green .fee-box span.price {
+  color: #157b80;
+}
 .sgl-package-options.col-blue h3,
-.sgl-package-options.col-blue .icon-inner,
-.sgl-package-options.col-blue .fee-box {
+.sgl-package-options.col-blue .icon-inner {
   background-color: #0082c7;
 }
+.sgl-package-options.col-blue .fee-box {
+  color: #339bd2;
+}
+.sgl-package-options.col-blue .fee-box span.price {
+  color: #0082c7;
+}
 .sgl-package-options.col-orange h3,
-.sgl-package-options.col-orange .icon-inner,
-.sgl-package-options.col-orange .fee-box {
+.sgl-package-options.col-orange .icon-inner {
   background-color: #e8841e;
+}
+.sgl-package-options.col-orange .fee-box {
+  color: #ec9c4a;
+}
+.sgl-package-options.col-orange .fee-box span.price {
+  color: #e8841e;
 }
 /* TAXI LICENSING FEE BOX */
 .fee-info-box,
 .packages-info-box {
   margin-top: 30px;
   border: 2px solid #a1a4a7;
-  padding: 0px 20px 10px 20px;
+  padding: 0px 20px 20px 20px;
   margin-bottom: 20px;
 }
 @media (min-width: 992px) {
@@ -2106,12 +2181,20 @@ section.package-options .package-list .package-list-item a {
     background-image: url(img/x2/inner-icon-sm.png);
   }
 }
+.fee-info-box ul.packages,
+.packages-info-box ul.packages {
+  margin-bottom: 0px;
+}
 .fee-info-box ul.packages li,
 .packages-info-box ul.packages li {
   border: none;
   margin-bottom: 10px;
   padding-bottom: 0px;
   padding-left: 0px;
+}
+.fee-info-box ul.packages li:last-child,
+.packages-info-box ul.packages li:last-child {
+  margin-bottom: 0px;
 }
 .fee-info-box ul.packages li a,
 .packages-info-box ul.packages li a {
@@ -2362,6 +2445,10 @@ section.package-options .package-list .package-list-item a {
 .packages-info-box .extra-txt {
   font-weight: bold;
   color: #ea5777;
+}
+.fee-info-box .extra-txt p:last-child,
+.packages-info-box .extra-txt p:last-child {
+  margin-bottom: 0px;
 }
 /* PACKAGE ICON */
 .package-icon {
@@ -3345,6 +3432,52 @@ div.content article.post .feat-img-thumb a:focus {
   div.content article.post .feat-img-thumb {
     margin-left: 20px;
   }
+}
+div.content article.page .price-box,
+div.content article.post .price-box,
+div.content article.page .links-box,
+div.content article.post .links-box {
+  padding: 10px 0px 10px 0px;
+  border-top: 2px solid #ea5777;
+  border-bottom: 2px solid #ea5777;
+  margin-bottom: 40px;
+}
+div.content article.page .price-box span,
+div.content article.post .price-box span,
+div.content article.page .links-box span,
+div.content article.post .links-box span {
+  display: block;
+}
+div.content article.page .price-box span.txt,
+div.content article.post .price-box span.txt,
+div.content article.page .links-box span.txt,
+div.content article.post .links-box span.txt {
+  color: #a1a4a7;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+div.content article.page .price-box span.price,
+div.content article.post .price-box span.price,
+div.content article.page .links-box span.price,
+div.content article.post .links-box span.price {
+  color: #ea5777;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", 'open_sanslight', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-stretch: normal;
+  font-size: 50px;
+  line-height: 50px;
+  height: 50px;
+}
+div.content article.page .price-box span.price small,
+div.content article.post .price-box span.price small,
+div.content article.page .links-box span.price small,
+div.content article.post .links-box span.price small {
+  font-size: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: normal;
+  font-stretch: normal;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: subpixel-antialiased;
 }
 div.content article.page ul,
 div.content article.post ul {

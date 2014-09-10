@@ -89,6 +89,38 @@ function add_gf_cap()
  
 add_action( 'admin_init', 'add_gf_cap' );
 
+function price_box ($atts, $price = null) {
+	$a = shortcode_atts( array(
+        'txt' => 'A Letter of Mitigation is provided for:',
+        'price' => '500',
+    ), $atts );
+    
+	$sc_price = '<div class="price-box">';
+	$sc_price .= '<span class="txt">'.$a['txt'].'</span>';
+	$sc_price .= '<span class="price">&pound;'.$a['price'].'<small>+VAT</small></span>';
+	$sc_price .= '</div>';
+	return $sc_price;	
+}
+add_shortcode("price", "price_box");
+
+function links_box ($atts, $content = null) {
+	$a = shortcode_atts( array(
+        'txt' => 'For more information on pricing please view our Packages',
+        'title' => 'Packages',
+        'icon' => 'fa-cubes',
+        'color' => 'grey',
+    ), $atts );
+    $pg = get_page_by_title($a['title']);
+    
+	$sc_package = '<div class="links-box">';
+	$sc_package .=  '<span class="txt">'.$a['txt'].'</span>';
+	$sc_package .=  '<a href="'.get_permalink($pg->ID).'" class="link-btn icon-btn col-'.$a['color'].'" style="margin-top: 15px;"><i class="fa '.$a['icon'].'"></i>'.$a['title'].'</a>';
+	$sc_package .= '</div>';
+	return $sc_package;	
+}
+add_shortcode("links-box", "links_box");
+
+
 function the_title_trim($title) {
 	$title = attribute_escape($title);
 	$findthese = array(

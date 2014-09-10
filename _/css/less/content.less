@@ -179,6 +179,36 @@ div.content {
 			
 		}
 		
+		.price-box, .links-box {
+			.pad(1;0;1;0);
+			.border-top(@red; 0.2);
+			.border-bot(@red; 0.2);	
+			.mag-bot(4);
+			
+			span {
+			.block
+			}
+			
+			span.txt {
+			.col(@grey);	
+			.line-h(1.6);
+			.caps;
+			}
+			
+			span.price {
+			.col(@red);
+			.font-lite;
+			.font-size(5);	
+			.line-h(5);
+			.h(5);
+				small {
+				.font-size(2);	
+				.font-normal;
+				}
+			}
+		}
+
+		
 		//Unordered list
 		ul {
 		list-style: none;

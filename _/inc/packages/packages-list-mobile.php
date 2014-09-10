@@ -6,6 +6,8 @@
 	$name = get_field('package_name', $package->ID);
 	$color = get_field('colour', $package->ID);
 	$package_options = get_field('package_options', $package->ID);
+	$fee_guilty = get_field('fee_guilty', $package->ID);
+	$fee_not_guilty = get_field('fee_not_guilty', $package->ID);
 	?>
 	<div class="package-list-item col-<?php echo $color; ?>">
 	
@@ -17,13 +19,27 @@
 			<?php } ?>
 		</ul>
 		
+		<div class="fee-box">
+			
+			<?php if ($fee_guilty) { ?>
+			<p>Guilty Plea / Appeal Sentence: <span class="price">&pound;<?php echo $fee_guilty; ?></span></p>
+			<?php }  ?>
+			
+			<span class="rule"></span>
+			
+			<?php if ($fee_not_guilty) { ?>
+			<p>Not Guilty Plea / Appeal Conviction: <span class="price">&pound;<?php echo $fee_not_guilty; ?></span></p>
+			<?php }  ?>
+			
+		</div>
+		
 		<a href="<?php echo get_permalink($package->ID); ?>" title="View <?php echo $package->post_title; ?> Package">Package Details <i class="fa fa-angle-right"></i></a>
 	
 	</div>
 	<?php } ?>
 	
 	<div class="message">
-		<small>*Meeting location requests may be declined if it is felt the location may pose a risk to the health and safety of the MotoPro employee or agent.</small>
+		<small><?php echo $location_note; ?></small>
 	</div>
 
 </div>
