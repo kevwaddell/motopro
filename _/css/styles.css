@@ -2222,9 +2222,9 @@ section.package-options .package-list .package-list-item a {
 @media (min-width: 992px) {
   .fee-info-box ul.packages li a,
   .packages-info-box ul.packages li a {
-    height: 90px;
+    height: 70px;
     line-height: 25px;
-    margin-left: 45px;
+    margin-left: 35px;
   }
 }
 .fee-info-box ul.packages li a span.link-icon,
@@ -2269,19 +2269,19 @@ section.package-options .package-list .package-list-item a {
 @media (min-width: 992px) {
   .fee-info-box ul.packages li a span.link-icon,
   .packages-info-box ul.packages li a span.link-icon {
-    height: 90px;
-    width: 90px;
-    margin-left: -45px;
-    -webkit-border-radius: 45px;
-    -moz-border-radius: 45px;
-    border-radius: 45px;
-    padding: 10px;
+    height: 70px;
+    width: 70px;
+    margin-left: -35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    padding: 8px;
   }
   .fee-info-box ul.packages li a span.link-icon span.icon-inner,
   .packages-info-box ul.packages li a span.link-icon span.icon-inner {
-    -webkit-border-radius: 40px;
-    -moz-border-radius: 40px;
-    border-radius: 40px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
   }
 }
 .fee-info-box ul.packages li a span.tag,
@@ -2296,7 +2296,7 @@ section.package-options .package-list .package-list-item a {
   .fee-info-box ul.packages li a span.tag,
   .packages-info-box ul.packages li a span.tag {
     display: block;
-    padding-top: 18px;
+    padding-top: 10px;
   }
 }
 .fee-info-box ul.packages li a span.name,
@@ -2992,6 +2992,57 @@ button.icon-btn:active,
 button.icon-btn:focus {
   background-color: #d0d2d2;
 }
+button.collapse-btn {
+  display: block;
+  width: 100%;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  border: none;
+  padding: 10px 40px 10px 40px;
+  background-color: #4b565c;
+  color: #ffffff;
+  min-height: 40px;
+  position: relative;
+  font-size: 20px;
+}
+button.collapse-btn:after {
+  position: absolute;
+  display: none;
+  top: 0px;
+  right: 0px;
+  content: "\f068";
+  font-family: FontAwesome;
+  width: 48px;
+  height: 48px;
+  font-size: 0.8em;
+  line-height: 48px;
+  text-align: center;
+  color: #ea5777;
+}
+button.collapse-btn:hover,
+button.collapse-btn:active,
+button.collapse-btn:focus {
+  color: #a1a4a7;
+}
+button.collapse-btn:hover:after,
+button.collapse-btn:active:after,
+button.collapse-btn:focus:after {
+  display: block;
+}
+button.collapse-btn.collapsed {
+  background-color: #d0d2d2;
+  color: #4b565c;
+}
+button.collapse-btn.collapsed:after {
+  content: "\f067";
+}
+button.collapse-btn.collapsed:hover,
+button.collapse-btn.collapsed:active,
+button.collapse-btn.collapsed:focus {
+  background-color: #4b565c;
+  color: #ffffff;
+}
 aside.sidebar .feat-img {
   margin-bottom: 20px;
 }
@@ -3440,7 +3491,7 @@ div.content article.post .links-box {
   padding: 10px 0px 10px 0px;
   border-top: 2px solid #ea5777;
   border-bottom: 2px solid #ea5777;
-  margin-bottom: 40px;
+  text-align: center;
 }
 div.content article.page .price-box span,
 div.content article.post .price-box span,

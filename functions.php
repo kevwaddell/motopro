@@ -120,6 +120,35 @@ function links_box ($atts, $content = null) {
 }
 add_shortcode("links-box", "links_box");
 
+function accordion_wrapper ($atts, $content = null) {
+	
+	$html = '<div id="accordion-wrap">';
+	$html .= do_shortcode($content);
+	$html .= '</div>';
+	
+	return $html;
+}
+
+add_shortcode("accordion-wrap", "accordion_wrapper");
+
+function accordion_box ($atts, $content = null) {
+	$a = shortcode_atts( array(
+        'id' => '1',
+        'title'	=> 'Title goes here'
+    ), $atts );
+    $html = '<div class="panel">';
+	$html .= '<button data-toggle="collapse" data-target="#collapse-panel-'.$a['id'].'" data-parent="#accordion-wrap" class="collapse-btn collapsed">';
+	$html .= $a['title'];
+	$html .= '</button>';
+	$html .= '<div id="collapse-panel-'.$a['id'].'" class="collapse-panel collapse">';
+	$html .= do_shortcode($content);
+	$html .= '</div>';
+	$html .= '</div>';
+	
+	return $html;
+}
+
+add_shortcode("accordion-box", "accordion_box");
 
 function the_title_trim($title) {
 	$title = attribute_escape($title);

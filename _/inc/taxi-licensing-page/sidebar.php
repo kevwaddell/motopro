@@ -22,11 +22,13 @@
 $contact_page = get_page_by_title('Request a Callback');
 $sb_links = get_field('sb_links');
 $brochure_link = get_field('brochure_link');
+$service = urlencode($post->post_title);
+//echo '<pre>';print_r($service);echo '</pre>';
 
 if (!empty($sb_links)) { ?>
 		
 	<?php foreach ($sb_links as $link) { ?>
-	<a href="<?php echo get_permalink($link[page]->ID); ?><?php echo ($link[page]->ID == $contact_page->ID) ? '#callback-request':''; ?>" class="link-btn icon-btn<?php echo ($link[page]->ID == $contact_page->ID) ? ' col-red':''; ?>"><?php if (!empty($link[icon])) { ?><i class="fa <?php echo $link[icon]; ?> fa-lg"></i><?php } ?><?php echo $link[page]->post_title; ?></a>
+	<a href="<?php echo get_permalink($link[page]->ID); ?><?php echo ($link[page]->ID == $contact_page->ID) ? '?service='.$service.'#callback-request':''; ?>" class="link-btn icon-btn<?php echo ($link[page]->ID == $contact_page->ID) ? ' col-red':''; ?>"><?php if (!empty($link[icon])) { ?><i class="fa <?php echo $link[icon]; ?> fa-lg"></i><?php } ?><?php echo $link[page]->post_title; ?></a>
 	<?php } ?>
 		
 	<?php }  ?>

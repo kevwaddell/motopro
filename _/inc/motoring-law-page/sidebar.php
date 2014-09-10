@@ -1,13 +1,17 @@
 <?php 
 $packages_pg = get_page_by_title("Packages");
 $packages_pg_content = $packages_pg->post_content;
-$packages_content = apply_filters('the_content', $packages_pg_content );
+$packages_txt = get_field('package_text');
 $packages = get_pages('sort_column=menu_order&child_of='.$packages_pg->ID);
+
 //echo '<pre>';print_r($packages_pg);echo '</pre>';
 ?>
 <div class="fee-info-box">
 	<h3>Our <?php echo $packages_pg->post_title; ?></h3>
-	<?php echo $packages_content; ?>
+	
+	<?php if ($packages_txt) { ?>
+	<?php echo $packages_txt; ?>
+	<?php } ?>
 	
 	<?php if ($packages) { ?>
 	<ul class="packages list-unstyled">
