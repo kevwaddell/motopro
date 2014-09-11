@@ -2,7 +2,7 @@
 	<h3>Fee Information</h3>
 	<strong>Fixed fees will include:</strong>
 	<ul class="list-unstyled">
-		<li><div class="icon"><div class="icon-inner"></div></div>Appeal to Committee/Magistrates Court/Crown Court</li>
+		<li><div class="icon"><div class="icon-inner"></div></div>Appeal to Committee or Magistrates/Crown Court</li>
 		<li><div class="icon"><div class="icon-inner"></div></div>Advice on appeal</li>
 		<li><div class="icon"><div class="icon-inner"></div></div>Drafting appeal notice</li>
 		<li><div class="icon"><div class="icon-inner"></div></div>Case preparation and representation at Committee or Court</li>
