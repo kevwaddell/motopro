@@ -10,5 +10,7 @@ $parent = get_page($post->post_parent);
 if ($post->post_name == "motopro-ultimate") { 
 $location_note = get_field('package_location_note', 'option');	
 }
+
+$extra_note = get_field('package_extra_note', 'option');	
 //echo '<pre>';print_r($package_options);echo '</pre>';
  ?>

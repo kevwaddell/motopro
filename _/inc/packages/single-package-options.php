@@ -42,7 +42,11 @@
 			</div>
 	
 			<?php } ?>
-		
+			
+			<?php if ($extra_note) { ?>
+			<div class="extra-note"><?php echo $extra_note; ?></div>
+			<?php } ?>
+			
 		</div>
 	
 	</div>

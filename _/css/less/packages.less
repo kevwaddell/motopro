@@ -747,6 +747,7 @@ section.package-options {
 					.col(@green);
 					}
 				}
+				
 			}
 			
 			&.col-blue {
@@ -861,7 +862,7 @@ section.package-options {
 	.align-center;
 	.font-size(1.4);
 	.line-h(2);
-	//.mag-bot(-6.5);
+	//.mag-bot(1);
 	.col(@grey);	
 	.bold;
 	//.pad-all(1);
@@ -913,6 +914,18 @@ section.package-options {
 		//.h(6);
 		//.line-h(6);
 		//.mag-bot(-6);
+		}
+	}
+	
+	.extra-note {
+	.mag-top(1);
+	.pad-all(1);
+	.bold;
+	.font-size(1.2);
+	.bg-col(@grey);
+	.col(white);
+		@media (min-width: @screen-md) {
+		.font-size(1.4);
 		}
 	}
 	
@@ -978,6 +991,7 @@ section.package-options {
 				.col(@green);
 				}
 			}
+			
 		}
 		
 		&-blue {

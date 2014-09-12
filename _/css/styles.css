@@ -2025,6 +2025,19 @@ section.package-options .package-list .package-list-item a {
 @media (min-width: 1200px) {
   
 }
+.sgl-package-options .extra-note {
+  margin-top: 10px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 12px;
+  background-color: #a1a4a7;
+  color: #ffffff;
+}
+@media (min-width: 992px) {
+  .sgl-package-options .extra-note {
+    font-size: 14px;
+  }
+}
 .sgl-package-options ul {
   margin-bottom: 20px;
 }
