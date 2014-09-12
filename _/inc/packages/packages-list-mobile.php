@@ -41,5 +41,10 @@
 	<div class="message">
 		<small><?php echo $location_note; ?></small>
 	</div>
+	
+			
+	<?php if ($extra_note) { ?>
+	<div class="extra-note"><?php echo $extra_note; ?></div>
+	<?php }  ?>
 
 </div>

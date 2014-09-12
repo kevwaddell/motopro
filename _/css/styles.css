@@ -1676,6 +1676,13 @@ section.package-options table tfoot td.package-footer-price.col-blue {
 section.package-options table tfoot td.package-footer-price.col-orange {
   color: #e8841e;
 }
+section.package-options table tfoot td.extra-note {
+  background-color: #a1a4a7;
+  text-align: center;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 10px;
+}
 section.package-options table tfoot td.package-footer {
   text-align: center;
 }
@@ -1758,6 +1765,15 @@ section.package-options .package-list .message small {
   color: #4b565c;
   font-size: 12px;
   line-height: 14px;
+}
+section.package-options .package-list .extra-note {
+  margin-top: 10px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 12px;
+  background-color: #a1a4a7;
+  color: #ffffff;
+  text-align: center;
 }
 section.package-options .package-list .package-list-item {
   margin-bottom: 20px;

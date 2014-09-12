@@ -124,5 +124,10 @@ echo '</pre>';
 			<td class="package-footer col-<?php echo $color; ?>"><a href="<?php echo get_permalink($package->ID); ?>" title="">Package details <i class="fa fa-angle-right"></i></a></td>
 			<?php } ?>
 		</tr>
+		<?php if ($extra_note) { ?>
+		<tr>
+			<td class="extra-note" colspan="4"><?php echo $extra_note; ?></td>
+		</tr>
+		<?php } ?>
 	</tfoot>
 </table>
