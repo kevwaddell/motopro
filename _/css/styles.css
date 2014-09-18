@@ -2484,6 +2484,7 @@ section.package-options .package-list .package-list-item a {
   position: relative;
   width: 60px;
   height: 60px;
+  border: 3px solid #ffffff;
   background-color: #242a2c;
   -webkit-border-radius: 88px;
   -moz-border-radius: 88px;
