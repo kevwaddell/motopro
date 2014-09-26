@@ -1,19 +1,24 @@
+<?php  
+$sb_box_title = get_field('box_title');
+$sb_list = get_field('inc_list');
+$sb_price = get_field('sb_price');
+$sb_extra_txt = get_field('sb_extra_text');
+?>
+
 <div class="fee-info-box">
-	<h3>Fee Information</h3>
+	<h3><?php echo $sb_box_title; ?></h3>
 	<strong>Fixed fees will include:</strong>
 	<ul class="list-unstyled">
-		<li><div class="icon"><div class="icon-inner"></div></div>Appeal to Committee or Magistrates/Crown Court</li>
-		<li><div class="icon"><div class="icon-inner"></div></div>Advice on appeal</li>
-		<li><div class="icon"><div class="icon-inner"></div></div>Drafting appeal notice</li>
-		<li><div class="icon"><div class="icon-inner"></div></div>Case preparation and representation at Committee or Court</li>
+		<?php foreach ($sb_list as $item) { ?>
+		<li><div class="icon"><div class="icon-inner"></div></div><?php echo $item['list_item']; ?></li>
+		<?php } ?>
 	</ul>
 	<div class="fee-price">
 		<span>Fixed Fee</span>
-		<p>&pound;500 + VAT</p>
+		<p>&pound;<?php echo $sb_price; ?> + VAT</p>
 	</div>
 	<div class="extra-txt">
-	<p>For existing Motopro clients who’s case fails at any level of appeal and who wish to appeal the decision further, a discounted fixed fee of £300 + VAT will be payable.</p>
-	<p>Disbursements will not be included.  You will be responsible for these fees.</p>
+	<?php echo $sb_extra_txt; ?>
 	</div>
 </div>
 
