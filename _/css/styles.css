@@ -2162,11 +2162,6 @@ section.package-options .package-list .package-list-item a {
   font-size: 20px;
   margin-top: -20px;
 }
-.fee-info-box strong,
-.packages-info-box strong {
-  display: block;
-  margin-bottom: 10px;
-}
 .fee-info-box ul li,
 .packages-info-box ul li {
   margin-bottom: 5px;
@@ -2456,9 +2451,12 @@ section.package-options .package-list .package-list-item a {
 .packages-info-box .fee-price span {
   display: block;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 14px;
   line-height: 15px;
-  color: #a1a4a7;
+  color: #ffffff;
+  background-color: #4b565c;
+  margin-bottom: 5px;
+  padding: 5px 10px 5px 10px;
 }
 .fee-info-box .fee-price p,
 .packages-info-box .fee-price p {
@@ -2470,6 +2468,24 @@ section.package-options .package-list .package-list-item a {
   font-stretch: normal;
   margin-bottom: 0px;
 }
+.fee-info-box .fee-price small,
+.packages-info-box .fee-price small {
+  font-size: 14px;
+  color: #a1a4a7;
+}
+.fee-info-box .fee-price span.small-price,
+.packages-info-box .fee-price span.small-price {
+  font-size: 16px;
+  padding: 10px 0px 0px 0px;
+  border-top: 1px solid #a1a4a7;
+  background-color: transparent;
+  color: #a1a4a7;
+  margin-bottom: 0px;
+}
+.fee-info-box .fee-price span.small-price strong,
+.packages-info-box .fee-price span.small-price strong {
+  color: #ea5777;
+}
 .fee-info-box .extra-txt,
 .packages-info-box .extra-txt {
   font-weight: bold;
@@ -2477,6 +2493,83 @@ section.package-options .package-list .package-list-item a {
 }
 .fee-info-box .extra-txt p:last-child,
 .packages-info-box .extra-txt p:last-child {
+  margin-bottom: 0px;
+}
+/* DISCOUNT SERVICES */
+.discounts-box {
+  padding: 20px 20px 10px 20px;
+  background-color: #e2e3e4;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .discounts-box {
+    margin-top: 20px;
+    padding: 0px 50px 0px 50px;
+    background-color: transparent;
+    border-left: 3px solid #a1a4a7;
+    border-right: 3px solid #a1a4a7;
+    margin-bottom: 40px;
+  }
+  .discounts-box:before,
+  .discounts-box:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 15px;
+    height: 30px;
+    background-image: url(img/entry-icon.png);
+    background-repeat: no-repeat;
+  }
+  .discounts-box:before {
+    left: 0px;
+    background-position: right center;
+  }
+  .discounts-box:after {
+    right: 0px;
+    background-position: left center;
+  }
+}
+@media (min-width: 768px) and only screen and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and only screen and (min--moz-device-pixel-ratio: 2), (min-width: 768px) and only screen and (-o-min-device-pixel-ratio: 2), (min-width: 768px) and only screen and (min-device-pixel-ratio: 2), (min-width: 768px) and only screen and (min-resolution: 192dpi), (min-width: 768px) and only screen and (min-resolution: 2dppx) {
+  .discounts-box:before,
+  .discounts-box:after {
+    background-image: url(img/x2/footer-icon.png);
+  }
+}
+@media (min-width: 992px) {
+  .discounts-box {
+    margin-top: 40px;
+    margin-bottom: 0px;
+  }
+}
+@media (min-width: 1200px) {
+  .discounts-box {
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+}
+.discounts-box h3 {
+  margin-bottom: 0px;
+}
+.discounts-box .db-service {
+  margin-top: 20px;
+}
+.discounts-box .db-service img {
+  margin-right: 10px;
+  padding: 5px;
+  background-color: #ffffff;
+}
+@media (min-width: 768px) {
+  .discounts-box .db-service img {
+    padding: 0px;
+  }
+}
+.discounts-box .db-service span.service-title {
+  color: #ea5777;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.discounts-box .db-service p {
   margin-bottom: 0px;
 }
 /* PACKAGE ICON */

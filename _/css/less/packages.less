@@ -1061,10 +1061,6 @@ section.package-options {
 	.font-size(2);
 	.mag-top(-2);
 	}
-	strong {
-	.block;
-	.mag-bot(1);	
-	}
 	ul {
 		li {
 		.mag-bot(0.5);
@@ -1273,9 +1269,12 @@ section.package-options {
 		span {
 		.block;
 		.caps;
-		.font-size(2);
+		.font-size(1.4);
 		.line-h(1.5);
-		.col(@grey);
+		.col(white);
+		.bg-col(@greyDk);
+		.mag-bot(0.5);
+		.pad(0.5;1;0.5;1);
 		}	
 		p {
 		.font-size(3.5);	
@@ -1284,12 +1283,108 @@ section.package-options {
 		.font-lite;
 		.mag-bot(0);
 		}
+		small {
+		.font-size(1.4);
+		.col(@grey);	
+		}
+		
+		span.small-price {
+		.font-size(1.6);
+		.pad(1;0;0;0);
+		.border-top(@grey; 0.1);
+		.bg-col(transparent);
+		.col(@grey);
+		.mag-bot(0);
+			strong {
+			.col(@red);	
+			}
+		}
 	}
 	
 	.extra-txt {
 	.bold;
 	.col(@red);	
 		p:last-child {
+		.mag-bot(0);	
+		}
+	}
+}
+
+/* DISCOUNT SERVICES */
+.discounts-box {
+.pad(2;2;1;2);
+.bg-col(@grey30);	
+.rel;
+
+	@media (min-width: @screen-sm) {
+	.mag-top(2);
+	.pad(0;5;0;5);
+	.bg-col(transparent);
+	.border-left(@grey; 0.3);
+	.border-right(@grey; 0.3);
+	.mag-bot(4);
+		&:before, &:after {
+		content: "";	
+		.abs;	
+		top: 50%;
+		.mag-top(-1.5);
+		.w(1.5);
+		.h(3);
+		.bg-img("entry-icon.png");
+		.bg-repeat(no-repeat);
+			@media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (      	 min-resolution: 192dpi),
+			only screen and (       min-resolution: 2dppx){ 
+			.bg-img("x2/footer-icon.png");
+			}
+		}
+		
+		&:before {
+		.left(0);
+		background-position: right center;
+		}
+		
+		&:after {
+		.right(0);
+		background-position: left center;
+		}
+
+	}
+	
+	@media (min-width: @screen-md) {
+	.mag-top(4);
+	.mag-bot(0);
+	}
+	
+	@media (min-width: @screen-lg) {
+	.pad-left(7.5);
+	.pad-right(7.5);
+	}
+	
+	h3 {
+	.mag-bot(0);
+	}
+
+	.db-service {
+	.mag-top(2);
+		img {
+		.mag-right(1);	
+		.pad-all(0.5);
+		.bg-col(white);
+			@media (min-width: @screen-sm) {
+			.pad-all(0);
+			}
+		}
+		span.service-title {
+		.col(@red);
+		.caps;
+		.bold;	
+		}
+		p {
 		.mag-bot(0);	
 		}
 	}

@@ -7,7 +7,7 @@ $sb_extra_txt = get_field('sb_extra_text');
 
 <div class="fee-info-box">
 	<h3><?php echo $sb_box_title; ?></h3>
-	<strong>Fixed fees will include:</strong>
+	<strong class="block" style="margin-bottom:10px;">Fixed fees will include:</strong>
 	<ul class="list-unstyled">
 		<?php foreach ($sb_list as $item) { ?>
 		<li><div class="icon"><div class="icon-inner"></div></div><?php echo $item['list_item']; ?></li>

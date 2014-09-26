@@ -1,11 +1,14 @@
 <?php 
 $services_page = get_page_by_title('Services');
 $packages_page = get_page_by_title('Packages');
+$scheme_page = get_page_by_title('Legal Assistance Scheme');
+$exclude = array($packages_page->ID, $scheme_page->ID);
 $services_args = array(
 'sort_column' => 'menu_order',
 'parent' => $services_page->ID,
-'exclude'	=> $packages_page->ID,
-'post_type' => 'page'
+'exclude'	=> $exclude,
+'post_type' => 'page',
+'post_status'	=> 'publish'
 );
 $services = get_pages($services_args);
 //echo '<pre>';print_r($services);echo '</pre>';
