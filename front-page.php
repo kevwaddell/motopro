@@ -20,10 +20,6 @@
 <?php endwhile; ?>
 <?php endif; ?>
 
-<!-- Quick Links -->
-<?php include (STYLESHEETPATH . '/_/inc/global/quick-links.php'); ?>
-<!--Quick Links end  -->
-
 <!-- Services -->
 <?php include (STYLESHEETPATH . '/_/inc/home-page/services.php'); ?>
 <!--Services end  -->
@@ -31,6 +27,10 @@
 <!-- Packages -->
 <?php include (STYLESHEETPATH . '/_/inc/home-page/packages.php'); ?>
 <!--Packages end  -->
+
+<!-- Quick Links -->
+<?php include (STYLESHEETPATH . '/_/inc/home-page/quick-links.php'); ?>
+<!--Quick Links end  -->
 
 
 </div>

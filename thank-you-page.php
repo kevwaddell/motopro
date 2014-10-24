@@ -17,12 +17,19 @@ Template Name: Thank page template
 <?php $thank_you_title = get_field('title') ; ?>	
 	
 		<article <?php post_class(); ?>>
-				<h2><?php echo $thank_you_title; ?> <?php echo $_GET['first-name'] ; ?>.</h2>
-				
-				<?php the_content(); ?>
+			<div class="entry-txt with-borders" style="margin-bottom: 40px;">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 text-center">
 
-				<a href="<?php echo get_permalink($post->post_parent) ; ?>" class="link-btn" style="padding-left:10px; width: 300px;" id="reload-form">Continue</a>
-				
+						<h2><?php echo $thank_you_title; ?> <?php echo $_GET['first-name'] ; ?>.</h2>
+						
+						<?php the_content(); ?>
+		
+						<a href="<?php echo get_permalink($post->post_parent) ; ?>" class="link-btn" style="padding-left:10px; width: 300px; margin:auto;" id="reload-form">Continue</a>
+					</div>
+				</div>
+			</div>
+			
 		</article>
 <?php endwhile; ?>
 <?php endif; ?>

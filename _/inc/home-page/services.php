@@ -1,12 +1,11 @@
 <?php 
 $services_page = get_page_by_title('Services');
 $packages_page = get_page_by_title('Packages');
-$scheme_page = get_page_by_title('Legal Assistance Scheme');
-$exclude = array($packages_page->ID, $scheme_page->ID);
+$exclude = array($packages_page->ID,);
 $services_args = array(
 'sort_column' => 'menu_order',
 'parent' => $services_page->ID,
-'exclude'	=> $exclude,
+'exclude'	=> $packages_page->ID,
 'post_type' => 'page',
 'post_status'	=> 'publish'
 );
@@ -21,7 +20,7 @@ $services = get_pages($services_args);
 	
 		<?php foreach ($services as $service) { ?>
 		
-		<div class="col-sm-6">
+		<div class="col-sm-4">
 			<a href="<?php echo get_permalink($service->ID); ?>" title="<?php echo $service->post_title; ?>">
 				<?php if (has_post_thumbnail($service->ID)) { 
 				$img_atts = array('class'	=> "img-responsive");
@@ -35,7 +34,7 @@ $services = get_pages($services_args);
 		
 		<?php } ?>
 	
-	
 	</div>
+	
 
 </section>

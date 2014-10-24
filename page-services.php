@@ -33,7 +33,7 @@
 		<!--Packages Links end  -->
 		
 		<!-- Quick Links -->
-		<?php include (STYLESHEETPATH . '/_/inc/packages/quick-links.php'); ?>
+		<?php include (STYLESHEETPATH . '/_/inc/services-page/quick-links.php'); ?>
 		<!--Quick Links end  -->
 		
 <?php endwhile; ?>

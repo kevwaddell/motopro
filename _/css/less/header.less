@@ -130,9 +130,11 @@ section.top-bar {
 	
 	.breadcrumbs {
 	.bg-col(@greyDk);	
-	.pad-top(0.5);
-	.pad-bot(0.5);
+	.h(3.5);
+	.line-h(3.5);
 	.col(white);
+	white-space: nowrap;
+	overflow-x: auto;	
 	
 		a {
 		.col(@grey50);
@@ -145,8 +147,8 @@ section.top-bar {
 		@media (min-width: @screen-sm) {
 		.h(2.5);
 		.line-h(2.5);
-		.pad-top(0);
-		.pad-bot(0);
+		white-space: normal;
+		overflow-x: inherit;
 		}
 	
 		@media (min-width: @screen-md) {

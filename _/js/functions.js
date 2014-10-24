@@ -138,6 +138,11 @@
         height: '300px',
        alwaysVisible: true
     });
+    
+     $('.discounts-box-wrap').slimScroll({
+       height: 'auto',
+       alwaysVisible: true
+    });
     	
 	
 	$(document).ready(function (){

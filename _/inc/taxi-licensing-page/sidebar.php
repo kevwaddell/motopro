@@ -15,7 +15,7 @@ $sb_extra_txt = get_field('sb_extra_text');
 	</ul>
 	<div class="fee-price">
 		<span>Fixed Fee</span>
-		<p>&pound;<?php echo $sb_price; ?> + VAT</p>
+		<p style="margin-bottom: 0px;">&pound;<?php echo $sb_price; ?> <small class="caps">+ VAT</small></p>
 	</div>
 	<div class="extra-txt">
 	<?php echo $sb_extra_txt; ?>
