@@ -171,15 +171,29 @@ max-width: 100% !important;
 	input[type=password] {
 	.font-size(1.4);
 	.border(@grey, 0.1);
+	
+		&:focus {
+		.border-col(@red);	
+		}
 		
 		@media (min-width: @screen-sm) {
 		.font-size(1.6);
 		}	
 	}
 	
+	input[type=radio] {
+	height: auto;
+	.mag-left(0.1);	
+	.mag-top(0.6)!important;	
+	}
+	
 	textarea {
 	.font-size(1.4);
 	.border(@grey, 0.1);
+	
+		&:focus {
+		.border-col(@red);	
+		}
 	
 		@media (min-width: @screen-sm) {
 		.font-size(1.6);
@@ -188,6 +202,10 @@ max-width: 100% !important;
 	
 	select {
 	.font-size(1.4);	
+	
+		&:focus {
+		.border-col(@red);	
+		}
 	
 		@media (min-width: @screen-sm) {
 		.font-size(1.6);
