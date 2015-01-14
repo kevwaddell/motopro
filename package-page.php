@@ -26,6 +26,8 @@ Template Name: Package page template
 			<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 						<?php the_content(); ?>
+						
+						<?php include (STYLESHEETPATH . '/_/inc/global/slogan.php'); ?>
 					</div>
 			</div>
 		</div>

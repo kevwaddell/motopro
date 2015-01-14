@@ -7,7 +7,7 @@ $c2a_contact = "Call us today for Free Advice";
 }
  ?>
 
-<div id="quick-links" class="with-mag-top">
+<div class="quick-links with-mag-top">
 		
 	<a href="<?php echo get_permalink($contact_page->ID); ?>" class="c2a-link-btn animated icon-btn col-red" title="<?php echo $c2a_contact; ?>"><i class="fa fa-comments fa-lg"></i><?php echo $c2a_contact; ?></a>
 	

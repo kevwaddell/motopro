@@ -12,7 +12,7 @@ $radio_ads_total = count($radio_ads);
 <a name="radio-player" id="radio-player"></a>
 
 <div class="radio-adverts">
-	<a href="#radio-player" id="call-2-action-radio" class="c2a-link-btn icon-btn col-grey-dk disabled" title="<?php echo $radio_ads_title; ?>"><i class="fa fa-microphone fa-lg animated"></i> <?php echo $radio_ads_title; ?></a>
+	<a href="#radio-player" id="call-2-action-radio" class="c2a-link-btn icon-btn col-green disabled" title="<?php echo $radio_ads_title; ?>"><i class="fa fa-microphone fa-lg animated"></i> <?php echo $radio_ads_title; ?></a>
 	
 <div class="audio-files closed">
 	

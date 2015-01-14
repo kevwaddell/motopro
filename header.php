@@ -33,8 +33,18 @@
 	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/_/img/favicon.ico">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<meta name="google-site-verification" content="L6441TmkYzS9QFSe5b06hxwhMSNdwuNsmcaOVpwwcOI" />
-
+	
 	<?php wp_head(); ?>
+	
+		
+	<?php 
+	$google_code_active = get_field('google_code_active', 'options');
+	if ($google_code_active) { 
+		$google_code = get_field('google_code', 'options');
+	?>
+		<?php echo $google_code; ?>
+		
+	<?php } ?>
 	
 	<?php 
 	$url = explode('/',$_SERVER['REQUEST_URI']);

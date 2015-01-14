@@ -1,8 +1,12 @@
-#quick-links {
+.quick-links {
 .mag-bot(3);
 	
 	@media (min-width: @screen-lg) {
 	.mag-bot(4);
+	}
+	
+	&.home-page-c2a {
+	.mag-bot(3);	
 	}
 	
 	&.with-mag-top {
@@ -380,7 +384,8 @@ font-size: 1.1em;
 		.bg-col(@greyDker);
 			i {
 			.bg-col(white);
-			.col(@green);
+			.border-col(@green);
+			.col(@greyDker);
 			}
 		}
 		
@@ -399,7 +404,8 @@ font-size: 1.1em;
 		.bg-col(@greyDker);
 			i {
 			.bg-col(white);
-			.col(@blue);
+			.border-col(@blue);
+			.col(@greyDker);
 			}
 		}
 		
@@ -417,7 +423,8 @@ font-size: 1.1em;
 		.bg-col(@greyDker);
 			i {
 			.bg-col(white);
-			.col(@orange);
+			.border-col(@orange);
+			.col(@greyDker);
 			}
 		}
 		

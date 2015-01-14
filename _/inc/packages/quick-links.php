@@ -15,7 +15,7 @@ $brochure_download = get_field('global_brochure_download', 'options');
 //echo '<pre>';print_r($brochure_download);echo '</pre>';
  ?>
 
-<section id="quick-links">
+<section class="quick-links">
 	
 	<a href="<?php echo get_permalink($contact_page->ID); ?>?service=<?php echo urldecode($post->post_title); ?>" class="c2a-link-btn animated icon-btn col-red" title="<?php echo $c2a_contact; ?>"><i class="fa fa-comments fa-lg"></i><?php echo $c2a_contact; ?></a>
 	

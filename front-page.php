@@ -21,6 +21,10 @@
 <?php endif; ?>
 
 <!-- Quick Links -->
+<?php include (STYLESHEETPATH . '/_/inc/home-page/call-2-action.php'); ?>
+<!--Quick Links end  -->
+
+<!-- Quick Links -->
 <?php include (STYLESHEETPATH . '/_/inc/home-page/radio-adverts.php'); ?>
 <!--Quick Links end  -->
 

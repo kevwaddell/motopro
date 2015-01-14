@@ -6330,24 +6330,27 @@ section.package-options .package-list .package-list-item.col-grey .fee {
 .extra-info .extra-info-txt p:last-child {
   margin-bottom: 0px;
 }
-#quick-links {
+.quick-links {
   margin-bottom: 30px;
 }
 @media (min-width: 1200px) {
-  #quick-links {
+  .quick-links {
     margin-bottom: 40px;
   }
 }
-#quick-links.with-mag-top {
+.quick-links.home-page-c2a {
+  margin-bottom: 30px;
+}
+.quick-links.with-mag-top {
   margin-top: 40px;
 }
 @media (min-width: 768px) {
-  #quick-links.with-mag-top {
+  .quick-links.with-mag-top {
     margin-top: 30px;
   }
 }
 @media (min-width: 992px) {
-  #quick-links.with-mag-top {
+  .quick-links.with-mag-top {
     margin-top: 35px;
   }
 }
@@ -6718,7 +6721,8 @@ a.c2a-link-btn.col-green:hover i,
 a.c2a-link-btn.col-green:active i,
 a.c2a-link-btn.col-green:focus i {
   background-color: #ffffff;
-  color: #157b80;
+  border-color: #157b80;
+  color: #242a2c;
 }
 a.c2a-link-btn.col-blue {
   background-color: #0082c7;
@@ -6735,7 +6739,8 @@ a.c2a-link-btn.col-blue:hover i,
 a.c2a-link-btn.col-blue:active i,
 a.c2a-link-btn.col-blue:focus i {
   background-color: #ffffff;
-  color: #0082c7;
+  border-color: #0082c7;
+  color: #242a2c;
 }
 a.c2a-link-btn.col-orange {
   background-color: #e8841e;
@@ -6752,7 +6757,8 @@ a.c2a-link-btn.col-orange:hover i,
 a.c2a-link-btn.col-orange:active i,
 a.c2a-link-btn.col-orange:focus i {
   background-color: #ffffff;
-  color: #e8841e;
+  border-color: #e8841e;
+  color: #242a2c;
 }
 a.link-btn {
   display: block;

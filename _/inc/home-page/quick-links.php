@@ -1,18 +1,15 @@
 <?php 
-$contact_page = get_page_by_title("Request a Callback");
-$c2a_contact = get_field('global_c2a_conatct', 'options');
+$presentation_download = get_field('global_presentation_download', 'options');
 $news_page_ID = get_option('page_for_posts');
 $news_page = get_page($news_page_ID);
-
-if (!$c2a_contact) {
-$c2a_contact = "Call us today for Free Advice";
-}
  ?>
 
-<div id="quick-links">
-		
-	<a href="<?php echo get_permalink($contact_page->ID); ?>" id="call-2-action-home" class="c2a-link-btn icon-btn col-red <?php echo (!wp_is_mobile()) ? 'animated bounceIn':'animated pulse' ; ?>" title="Call us today for Free Advice"><i class="fa fa-comments fa-lg animated"></i><?php echo $c2a_contact; ?></a>
+<div class="quick-links">
 	
-	<a href="<?php echo get_permalink($news_page->ID); ?>" id="call-2-action-home" style="margin-top:30px;" class="c2a-link-btn icon-btn col-grey" title="Latest news from <?php bloginfo('name'); ?>"><i class="fa fa-rss fa-lg animated"></i>Latest news from <?php bloginfo('name'); ?></a>
+	<a href="<?php echo get_permalink($news_page->ID); ?>" id="call-2-action-home" style="margin-top:30px;" class="c2a-link-btn icon-btn col-blue" title="Latest news from <?php bloginfo('name'); ?>"><i class="fa fa-rss fa-lg animated"></i>Latest news from <?php bloginfo('name'); ?></a>
 	
+	<?php if ($presentation_download) { ?>
+	<a href="<?php echo $presentation_download; ?>" id="call-2-action-home" style="margin-top:30px;" target="_blank" class="c2a-link-btn icon-btn col-orange" title="Download our Presentation"><i class="fa fa-download fa-lg animated"></i>Download our Presentation</a>
+	<?php } ?>
+
 </div>

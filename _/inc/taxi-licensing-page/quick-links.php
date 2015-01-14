@@ -6,7 +6,7 @@ if (!$c2a_contact) {
 $c2a_contact = "Call us today for Free Advice";
 }
 ?>
-<div id="quick-links" class="with-mag-top" style="margin-bottom: 50px;">
+<div class="quick-links with-mag-top" style="margin-bottom: 50px;">
 		
 	<a href="<?php echo get_permalink($contact_page->ID); ?>?service=<?php echo urlencode($post->post_title); ?>" class="c2a-link-btn animated sml-txt icon-btn col-red" title="<?php echo $c2a_contact; ?>"><i class="fa fa-comments fa-lg"></i><?php echo $c2a_contact; ?></a>
 	
