@@ -3,21 +3,35 @@ if ( !function_exists(core_mods) ) {
 	function core_mods() {
 		if ( !is_admin() ) {
 			wp_register_style( 'styles', get_stylesheet_directory_uri().'/_/css/styles.css', null, filemtime( get_stylesheet_directory().'/_/css/styles.css' ) );
+			wp_register_style( 'select-css', 'http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.css', null );
 			//wp_register_style( 'font-awesome', "//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", null, null );
 			wp_register_script( 'slim-scroll', get_stylesheet_directory_uri() . '/_/js/jquery.slimscroll.min.js', array('jquery'), '1.0.0', true );
+			wp_register_script( 'bootstrap-select', 'http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.js', array('jquery', 'bootstrap-all-min'), '1.0.0', true );
 			//wp_register_script( 'bootstrap-tabs', get_stylesheet_directory_uri() . '/_/js/bootstrap-tabs.js', array('jquery','jquery-ui-core'), '1.0.0', true );
-			wp_register_script( 'functions', get_stylesheet_directory_uri() . '/_/js/functions-min.js', array('jquery', 'jquery-ui-core', 'bootstrap-all-min', 'slim-scroll'), '1.0.1', true );
+			if ($_SERVER['REMOTE_ADDR'] != '127.0.0.1') {
+			wp_register_script( 'functions', get_stylesheet_directory_uri() . '/_/js/functions-min.js', array('jquery', 'jquery-ui-core', 'bootstrap-all-min', 'slim-scroll'), '1.0.1', true );	
+			} else {
+			wp_register_script( 'functions', get_stylesheet_directory_uri() . '/_/js/functions.js', array('jquery', 'jquery-ui-core', 'bootstrap-all-min', 'slim-scroll'), '1.0.1', true );
+			}
 			//wp_register_script( 'img-fit', get_stylesheet_directory_uri() . '/_/js/jquery.imagefit.js', array('jquery'), '1.0.0', true );
 			
-			wp_enqueue_style('font-awesome');
+			//wp_enqueue_style('font-awesome');
+			wp_enqueue_style('select-css');
 			wp_enqueue_style('styles');
 			wp_enqueue_script('slim-scroll');
+			wp_enqueue_script('bootstrap-select');
 			//wp_enqueue_script('bootstrap-tabs');
 			wp_enqueue_script('functions');
 			//wp_enqueue_script('img-fit');
 		}
 	}
 	core_mods();
+}
+
+add_action( 'after_setup_theme', 'editor_styles' );
+
+function editor_styles() {
+add_editor_style();	
 }
 
 add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
@@ -173,4 +187,13 @@ function custom_password_form() {
     return $o;
 }
 
+add_action("gform_field_css_class", "custom_class", 10, 3);
+
+function custom_class($classes, $field, $form){
+    
+    if($field["type"] == "select"){
+        $classes .= " selectpicker";
+    }
+    return $classes;
+}
  ?>

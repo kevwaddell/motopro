@@ -1,10 +1,31 @@
+#small-map {
+.bg-col(white);
+.rel;
+.over-hide;
+.mag-bot(2);
+.border(@grey; 0.3);
+
+	#sml-map-canvas {
+	.h(22);	
+	width: 100%;
+	}
+	.google-maps {
+	width: 100%;	
+	}
+}
+
 #location-map {
 	.over-hide;
 	.rel;
 	.bg-col(white);	
-	.mag-top(3);	
+	.mag-top(3);
+	
+	.google-maps {
+	width: 100%;	
+	}	
 		
 	&.directions-closed {
+	.none;
 		
 		button.close-btn {
 		.bottom(-3);
@@ -16,7 +37,7 @@
 	}
 	
 	&.directions-open {
-	
+	.block;
 		button.close-btn {
 		.bottom(0);
 		}

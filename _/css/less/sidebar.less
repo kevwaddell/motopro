@@ -32,16 +32,16 @@ aside.sidebar {
 		
 	}
 	
-	ul.contact-list {
-	.mag-bot(2);
+	&.contact-sb {
+	.mag-top(2);	
 	
-		@media (min-width: @screen-sm) {
-		.mag-bot(3);
-		}
-		
 		@media (min-width: @screen-md) {
-		.mag-bot(0);
+		.mag-top(0);
 		}
+	}
+	
+	ul.contact-list {
+	.mag-bot(0);
 	
 		li {
 		.line-h(4);	
@@ -72,9 +72,155 @@ aside.sidebar {
 		}
 	}
 	
-	.share-btns {
-	.mag-bot(2);	
+	.form-box {
+	.mag-top(3);
+	.bg-col(@greyDk);
+	.pad(0;2;2;2);	
+	.mag-bot(2);
+	.rel;
+	
+		@media (min-width: @screen-md) {
+		.mag-top(2);
+		.mag-bot(3);
+		}
 		
+		h3 {
+		.rel;
+		.caps;
+		.bg-col(@red);
+		.col(white);
+		text-align: center;
+		.h(4);
+		.line-h(4);
+		.font-size(2);
+		.top(-2);
+		.mag-bot(0);
+		}
+		
+		.gform_description {
+		.col(white);
+		.font-size(1.6);	
+		}
+		
+		.gfield, .gform_heading {
+		.mag-bot(0) !important;	
+		}
+		
+		.gfield_required {
+		.col(@red);	
+		}
+		
+		textarea {
+		.h(8);
+		.transition;
+			&:focus {
+			.h(15);	
+			}	
+		}
+		
+		.gform_footer {
+			&:before {
+			.block;
+			.bg-col(@red);
+			.col(white);
+			}
+		}
+		
+		input.gform_button {
+		.bg-col(@red) !important;
+		.col(white) !important;	
+		.caps;
+		.font-lite;
+			&:hover, &:active, &:focus {
+			.bg-col(darken(@red, 20%)) !important;	
+			}
+		}
+		
+		.validation_error {
+		.mag-top(1);
+		.mag-bot(0) !important;
+		}
+	
+	}
+		
+	.share-btns {
+	.fixed;
+	.left(0);
+	.bottom(0);
+	width: 100%;
+	.over-hide;
+	z-index: 500;
+	.border-top(white; 0.1);
+	
+		@media (min-width: @screen-md) {
+		.rel;
+		left: auto;
+		bottom: auto;	
+		.no-border;
+		}
+		
+		span.header-label {
+		.block;
+		.caps;
+		.h(4);
+		.line-h(4);
+		.bg-col(@red);
+		.col(white);	
+		.border-right(white; 0.1);
+		text-align: center;
+		.fleft;
+		width: 20%;
+			@media (min-width: @screen-md) {
+			.no-float;
+			width: 100%;	
+			.border-bot(white; 0.1);
+			border-right: none;
+			}
+		}
+		
+		.ssba {
+		width: 80%;	
+		.fleft;
+			@media (min-width: @screen-md) {
+			width: 100%;
+			.no-float;	
+			}
+			a {
+			.block;
+			.fleft;
+			width: 25%;
+			text-align: center;
+			.border-right(white; 0.1);
+			
+				&.ssba_twitter_share {
+				.bg-col(#39aae1);	
+				}
+				
+				&.ssba_facebook_share {
+				.bg-col(#3b5999);	
+				}
+				
+				&.ssba_linkedin_share {
+				.bg-col(#007fb2);	
+				}
+				
+				&.ssba_google_share {
+				.bg-col(#d24836);	
+				.no-border;
+				}
+				
+				img {
+				.no-float;	
+				}
+				
+				&:hover, &:active, &:focus {
+					img {
+					.opacity(0.7);	
+					}
+				}
+			}
+		}
+
 	}
 	
 }

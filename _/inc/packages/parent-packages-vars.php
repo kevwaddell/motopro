@@ -27,6 +27,7 @@ $ult__total = count($ult_options);
 $ult_color = get_field('colour', $packages[2]->ID);
 $location_note = get_field('package_location_note', 'option');
 $extra_note = get_field('package_extra_note', 'option');
+$service_title = get_field('service_title');
 
 /*
 echo '<pre>';

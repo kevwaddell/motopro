@@ -65,7 +65,13 @@ if ($faqs) {
 		</article>
 		
 		
-		<?php if (!empty($rel_faqs)) { ?>
+		<?php if (!empty($rel_faqs)) { 
+		if (wp_is_mobile()) {
+		$event = 'tap';	
+		} else {
+		$event = 'click';		
+		}
+		?>
 		<section id="faq-box-wrap" class="faq-box">
 			<h3>FAQ's</h3>
 			
@@ -74,7 +80,7 @@ if ($faqs) {
 			?>
 			
 			 <div class="faq-panel panel">
-			 	<button data-toggle="collapse" data-target="#panel-<?php echo $rel_faqs_counter; ?>" data-parent="#faq-box-wrap" class="faq-btn collapsed"><?php echo $faq[q]; ?></button>
+			 	<button data-toggle="collapse" onclick="ga('send', 'event','tab', '<?php echo $event; ?>', '<?php echo $post->post_title; ?> - <?php echo $faq[q]; ?>')" data-target="#panel-<?php echo $rel_faqs_counter; ?>" data-parent="#faq-box-wrap" class="faq-btn collapsed"><?php echo $faq[q]; ?></button>
 				 <div id="panel-<?php echo $rel_faqs_counter; ?>" class="collapse">
 				 	<p><?php echo $faq[a]; ?></p>
 				 </div>
@@ -96,9 +102,8 @@ if ($faqs) {
 		
 			<?php if (!empty($children)) { ?>
 				<ul class="list-unstyled btn-list btns-closed">
-					<li class="active-page"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(array('before'=>'View page:')); ?>"><?php the_title(); ?></a></li>
 				<?php foreach ($children as $child) { ?>
-					<li><a href="<?php echo get_permalink($child->ID); ?>" title="View: <?php echo $child->post_title; ?>"><?php echo $child->post_title; ?></a></li>
+					<li<?php echo ($child->ID == get_the_ID()) ? ' class="active-page"':'' ?>><a href="<?php echo get_permalink($child->ID); ?>" title="View: <?php echo $child->post_title; ?>"><?php echo $child->post_title; ?></a></li>
 				<?php } ?>
 				</ul>
 			<?php } ?>
@@ -108,7 +113,7 @@ if ($faqs) {
 				<?php if (!empty($sb_links)) { ?>
 					
 				<?php foreach ($sb_links as $link) { ?>
-				<a href="<?php echo get_permalink($link[page]->ID); ?><?php echo ($link[page]->ID == $contact_page->ID) ? '#callback-request':''; ?>" class="link-btn icon-btn<?php echo ($link[page]->ID == $contact_page->ID) ? ' col-red':''; ?>"><?php if (!empty($link[icon])) { ?><i class="fa <?php echo $link[icon]; ?> fa-lg"></i><?php } ?><?php echo $link[page]->post_title; ?></a>
+				<a href="<?php echo get_permalink($link[page]->ID); ?>" class="link-btn icon-btn<?php echo ($link[page]->ID == $contact_page->ID) ? ' col-red':''; ?>"><?php if (!empty($link[icon])) { ?><i class="fa <?php echo $link[icon]; ?> fa-lg"></i><?php } ?><?php echo $link[page]->post_title; ?></a>
 				<?php } ?>
 					
 				<?php }  ?>

@@ -66,4 +66,8 @@ $brochure_link = get_field('brochure_link');
 </div>
 <!-- Container end  -->
 
+<!-- Social Share buttons -->
+<?php include (STYLESHEETPATH . '/_/inc/global/share-btns.php'); ?>
+<!--Social Share buttons   -->
+
 <?php get_footer(); ?>

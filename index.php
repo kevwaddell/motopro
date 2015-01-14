@@ -23,6 +23,8 @@
 	</div>
 	
 	<div class="col-md-8 col-lg-8">
+		
+	<?php //echo '<pre>';print_r($wp_query);echo '</pre>'; ?>
 
 <?php if ( have_posts() ): ?>	
 

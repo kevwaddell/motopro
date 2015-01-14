@@ -11,6 +11,7 @@ background-position: left top;
 .transition(0.5s, ease-in-out);
 transition-property: right;
 .pad(0;0;3;0);
+font-size: 0.9em;
 
 	&.nav-closed {
 	.opacity(0);
@@ -39,6 +40,7 @@ transition-property: right;
 			.h(4);
 			.line-h(4);
 			.border-bot(@grey; 0.1);
+			.col(@grey);
 			
 				&:after {
 				content: "\f105";
@@ -58,6 +60,7 @@ transition-property: right;
 				}
 				
 				&:hover, &:active, &:focus {
+				.col(@red);
 					i {
 					.col(@grey);	
 					}	
@@ -97,11 +100,18 @@ transition-property: right;
 							a {
 							.h(4);
 							.line-h(4);
-							.pad-left(0);	
+							.pad-left(4);	
+							.bg-img("nav-icon-mobile.png");
+							.bg-repeat(no-repeat);
+							background-position: left top;
+								&:hover, &:active, &:focus {
+								background-position: left bottom;
+								}
 							}
 							
 							ul.sub-menu {
 								a {
+								background-image: none;
 								height: auto;
 								.line-h(2.5);	
 								.pad-left(4);
@@ -117,6 +127,11 @@ transition-property: right;
 			&.sub-hover {
 			
 				a {
+					
+					&:hover, &:active, &:focus {
+					background-position: left bottom;
+					}
+					
 					&:after {
 					content: "\f105";
 					font-family: FontAwesome;
@@ -245,7 +260,7 @@ transition-property: right;
 						}
 						
 						li.sub-nav-parent {
-						.mag-top(0.5);
+						.mag-top(0.1);
 							a {	
 							.block;
 							.bg-col(@greyDk);
@@ -256,6 +271,10 @@ transition-property: right;
 							.line-h(3);
 							.indent(1.5);
 							.caps;
+							.bg-img("nav-icon.png");
+							.bg-repeat(no-repeat);
+							background-position: right top;
+							.pad-left(0);
 								i {
 								.block;
 								.fright;
@@ -268,6 +287,7 @@ transition-property: right;
 								&:hover, &:active, &:focus {
 								.bg-col(@red);
 								.col(white);
+								background-position: right bottom;
 									i {
 									.col(@greyDk);
 									}
@@ -285,6 +305,7 @@ transition-property: right;
 								content: none;	
 								}
 								a {
+								background-image: none;
 								.no-border;	
 								.col(@grey);
 								text-transform: none;
@@ -366,37 +387,6 @@ body#home {
 		#main-nav {
 			li.home {
 			.none;	
-			}
-		}
-	}
-}
-
-body#news {
-	
-	@media (min-width: @screen-md) {	
-		#main-nav {
-			li.about {
-				
-				//Top level link styles
-				a {
-				.col(@red);
-				
-					i {
-					.col(@grey);
-					}
-					
-				}
-				
-				ul {
-						
-					a {
-					.col(@grey);
-						&:hover, &:active, &:focus {
-						.col(@red);	
-						}
-					}
-				
-				}
 			}
 		}
 	}

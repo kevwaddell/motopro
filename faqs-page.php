@@ -80,7 +80,7 @@ ksort($related_qs);
 			<?php if (!empty($sb_links)) { ?>
 				
 			<?php foreach ($sb_links as $link) { ?>
-			<a href="<?php echo get_permalink($link[page]->ID); ?><?php echo ($link[page]->ID == $contact_page->ID) ? '#callback-request':''; ?>" class="link-btn icon-btn<?php echo ($link[page]->ID == $contact_page->ID) ? ' col-red':''; ?>"><?php if (!empty($link[icon])) { ?><i class="fa <?php echo $link[icon]; ?> fa-lg"></i><?php } ?><?php echo $link[page]->post_title; ?></a>
+			<a href="<?php echo get_permalink($link[page]->ID); ?>" class="link-btn icon-btn<?php echo ($link[page]->ID == $contact_page->ID) ? ' col-red':''; ?>"><?php if (!empty($link[icon])) { ?><i class="fa <?php echo $link[icon]; ?> fa-lg"></i><?php } ?><?php echo $link[page]->post_title; ?></a>
 			<?php } ?>
 				
 			<?php }  ?>
@@ -97,73 +97,30 @@ ksort($related_qs);
 	
 	<div class="col-md-7 col-lg-8">
 		
-		<section id="faq-panels-wrap" class="faq-panels">
-		
-		<?php if (!empty($related_qs_none)) { ?>
-		
-			<div class="faq-panel panel">
-		
-				<button data-toggle="collapse" data-target="#panel-general" data-parent="#faq-panels-wrap" class="faq-btn collapsed">General Questions</button>
-				
-				<div id="panel-general" class="collapse">
-				
-				<?php foreach ($faqs as $faq) { 
-				$question = get_field('faq_question', $faq->ID);
-				$answer = get_field('faq_answer', $faq->ID);
-				$related = get_field('related', $faq->ID);
-				//echo '<pre>';print_r($related);echo '</pre>';
-				?>
-				
-					<?php if (in_array($faq->ID, $related_qs_none)) { ?>
-	
-					 	<p class="question"><i class="fa fa-comment"></i> <?php echo $question; ?></p>
-						<p class="answer"><?php echo $answer; ?></p>
-	
-				 	<?php } ?>
-					 
-				<?php } ?>
-				
-				</div>
-			
-		</div>	
+		<?php if (wp_is_mobile()) { ?>
+		<!-- Legal Procedures Mobile -->
+		<?php include (STYLESHEETPATH . '/_/inc/faqs/faqs-mobile.php'); ?>
+		<!--Legal Procedures end  -->
+		<?php } else { ?>
+		<!-- Legal Procedures Desktop -->
+		<?php include (STYLESHEETPATH . '/_/inc/faqs/faqs-desktop.php'); ?>
+		<!--Legal Procedures end  -->
 		<?php } ?>
-		
-		<?php if (!empty($related_qs)) { ?>
-
-			<?php foreach ($related_qs as $key => $val) { 
-			//echo '<pre>';print_r($key);echo '</pre>';
-			$rel_page = get_page($val[0]['id']);
-			//echo '<pre>';print_r($val[0]['id']);echo '</pre>';
-			?>
-			
-				<div class="faq-panel panel">
-					<button data-toggle="collapse" data-target="#panel-<?php echo $key; ?>" data-parent="#faq-panels-wrap" class="faq-btn collapsed"><?php echo $rel_page->post_title; ?> Questions</button>
-					 <div id="panel-<?php echo $key; ?>" class="collapse">
-						<?php foreach ($val as $item) { ?>
-						<p class="question"><i class="fa fa-comment"></i> <?php echo $item[q]; ?></p>
-						<p class="answer"><?php echo $item[a]; ?></p>
-					 	<?php } ?>
-					 </div>
-				</div>
-							 
-			<?php } ?>
-			
-		<?php } ?>
-		
-		</section>
-		
+				
 		<div class="action-btns visible-xs visible-sm">
 		
 			<?php if (!empty($sb_links)) { ?>
 				
 			<?php foreach ($sb_links as $link) { ?>
-			<a href="<?php echo get_permalink($link[page]->ID); ?><?php echo ($link[page]->ID == $contact_page->ID) ? '#callback-request':''; ?>" class="link-btn icon-btn<?php echo ($link[page]->ID == $contact_page->ID) ? ' col-red':''; ?>"><?php if (!empty($link[icon])) { ?><i class="fa <?php echo $link[icon]; ?> fa-lg"></i><?php } ?><?php echo $link[page]->post_title; ?></a>
+			<a href="<?php echo get_permalink($link[page]->ID); ?>" class="link-btn icon-btn<?php echo ($link[page]->ID == $contact_page->ID) ? ' col-red':''; ?>"><?php if (!empty($link[icon])) { ?><i class="fa <?php echo $link[icon]; ?> fa-lg"></i><?php } ?><?php echo $link[page]->post_title; ?></a>
 			<?php } ?>
 				
 			<?php }  ?>
 			
-			<?php if ($brochure_link) { ?>
-			<a href="#" class="link-btn icon-btn"><i class="fa fa-download fa-lg"></i>Download our Brochure</a>
+			<?php if ($brochure_link) {
+			$brochure_download = get_field('global_brochure_download', 'option'); 
+			?>
+			<a href="<?php echo $brochure_download; ?>" class="link-btn icon-btn"><i class="fa fa-download fa-lg"></i>Download our Brochure</a>
 			<?php }  ?>
 
 		</div>
@@ -177,5 +134,9 @@ ksort($related_qs);
 	
 </div>
 <!-- Container end  -->
+
+<!-- Social Share buttons -->
+<?php include (STYLESHEETPATH . '/_/inc/global/share-btns.php'); ?>
+<!--Social Share buttons   -->
 
 <?php get_footer(); ?>

@@ -3,7 +3,17 @@ $sb_box_title = get_field('box_title');
 $sb_list = get_field('inc_list');
 $sb_price = get_field('sb_price');
 $sb_extra_txt = get_field('sb_extra_text');
+$form = get_field('sb_form');
 ?>
+
+<?php if ($form) { ?>
+<div class="form-box">
+	<h3>Request a call back</h3>
+	
+	<?php gravity_form($form->id, false, true, false, null, true); ?>
+		
+</div>
+<?php } ?>
 
 <div class="fee-info-box">
 	<h3><?php echo $sb_box_title; ?></h3>
@@ -17,30 +27,11 @@ $sb_extra_txt = get_field('sb_extra_text');
 		<span>Fixed Fee</span>
 		<p style="margin-bottom: 0px;">&pound;<?php echo $sb_price; ?> <small class="caps">+ VAT</small></p>
 	</div>
-	<div class="extra-txt">
-	<?php echo $sb_extra_txt; ?>
-	</div>
-</div>
-
-<div class="side-action-btns">		
-<?php 
-$contact_page = get_page_by_title('Request a Callback');
-$sb_links = get_field('sb_links');
-$brochure_link = get_field('brochure_link');
-$service = urlencode($post->post_title);
-//echo '<pre>';print_r($service);echo '</pre>';
-
-if (!empty($sb_links)) { ?>
-		
-	<?php foreach ($sb_links as $link) { ?>
-	<a href="<?php echo get_permalink($link[page]->ID); ?><?php echo ($link[page]->ID == $contact_page->ID) ? '?service='.$service.'#callback-request':''; ?>" class="link-btn icon-btn<?php echo ($link[page]->ID == $contact_page->ID) ? ' col-red':''; ?>"><?php if (!empty($link[icon])) { ?><i class="fa <?php echo $link[icon]; ?> fa-lg"></i><?php } ?><?php echo $link[page]->post_title; ?></a>
-	<?php } ?>
-		
-	<?php }  ?>
 	
-	<?php if ($brochure_link) { 
-	$brochure_download = get_field('global_brochure_download', 'option');	
-	?>
-	<a href="<?php echo $brochure_download; ?>" target="_blank" class="link-btn icon-btn"><i class="fa fa-download fa-lg"></i>Download our Brochure</a>
-	<?php }  ?>
+	<div class="extra-info info-closed">
+		<button id="extra-info-btn" class="btn icon-btn">Extra Information</button>
+		<div class="extra-info-txt">
+			<?php echo $sb_extra_txt; ?>
+		</div>
+	</div>
 </div>

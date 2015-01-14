@@ -7,7 +7,8 @@
 		
 		<?php
 		$services_pg = get_page_by_title("Services");
-		$packages_pg = get_page_by_title("Packages");
+		$packages_pg = get_page_by_title("Premium Legal Service");
+		$packages_pg_title = get_field('service_title', $packages_pg->ID);
 		 ?>
 		
 		<div class="footer-icon"></div>
@@ -25,7 +26,7 @@
 									'menu_class'  => 'footer-nav list-unstyled',
 									'fallback_cb' => false ) ); 
 								 ?>
-								  <h3 class="left-head"><a href="<?php echo get_permalink($packages_pg->ID); ?>" title="View <?php echo $packages_pg->post_title; ?>"><?php echo $packages_pg->post_title; ?></a></h3>
+								  <h3 class="left-head"><a href="<?php echo get_permalink($packages_pg->ID); ?>" title="View <?php bloginfo('name'); ?> <?php echo $packages_pg->post_title; ?>"><?php bloginfo('name'); ?> <?php echo $packages_pg_title; ?></a></h3>
 								 <?php wp_nav_menu(array( 
 									'container' => 'false', 
 									'menu' => 'Packages Footer Menu', 

@@ -1,27 +1,19 @@
 <?php
 $brochure_download = get_field('brochure_download');
+$c2a_contact = get_field('global_c2a_conatct', 'options');
+
+if (!$c2a_contact) {
+$c2a_contact = "Call us today for free advice";
+}
 //echo '<pre>';print_r($brochure_download);echo '</pre>';
  ?>
 
-<aside class="actions">
+<div class="quick-links">
 
-	<?php if (empty($brochure_download)) { ?>
+		<a href="<?php echo get_permalink($contact_page->ID); ?>?service=<?php echo urldecode($parent->post_title); ?>&package=<?php echo $package_name; ?>" class="c2a-link-btn icon-btn col-red"><i class="fa fa-comments fa-lg"></i><?php echo $c2a_contact; ?></a>
 		
-		<a href="<?php echo get_permalink($contact_page->ID); ?>?service=<?php echo urldecode($parent->post_title); ?>&package=<?php echo $package_name; ?>#callback-request" class="link-btn icon-btn col-<?php echo $color; ?>"><i class="fa fa-phone fa-lg"></i>Request a Callback</a>
-		
-	<?php } else { ?>
+	<?php if (!empty($brochure_download)) { ?>
+		<a href="<?php echo $brochure_download; ?>" target="_blank" style="margin-top:30px;" class="c2a-link-btn icon-btn col-<?php echo $color; ?>"><i class="fa fa-download fa-lg"></i>Download our package Brochure</a>
+	<?php } ?>	
 	
-	<div class="row">
-		<div class="col-md-6">
-			<a href="<?php echo get_permalink($contact_page->ID); ?>?service=<?php echo urldecode($parent->post_title); ?>&package=<?php echo $package_name; ?>#callback-request" class="link-btn icon-btn col-<?php echo $color; ?>"><i class="fa fa-phone fa-lg"></i>Request a Callback</a>
-		</div>
-		
-		<div class="col-md-6">
-			<a href="<?php echo $brochure_download; ?>" target="_blank" class="link-btn icon-btn col-<?php echo $color; ?>"><i class="fa fa-download fa-lg"></i>Download our Brochure</a>
-		</div>
-	</div>
-	
-	<?php } ?>
-	
-	
-</aside>
+</div>

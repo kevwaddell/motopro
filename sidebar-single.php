@@ -72,8 +72,3 @@ if ($post_categories) { ?>
 </ul>
 
 <?php } ?>
-
-
-<div class="share-btns">
-	<?php echo do_shortcode('[ssba]'); ?>
-</div>

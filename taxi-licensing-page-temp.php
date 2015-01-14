@@ -26,8 +26,14 @@ Template Name: Taxi Licensing page template
 		<article <?php post_class(); ?>>
 			<h2><?php the_title(); ?></h2>
 			<?php the_content(); ?>
+			
+			<div class="slogan"><span>Trust us with <br>your Taxi license</span></div>
+	
+			<!-- Quick Links -->
+			<?php include (STYLESHEETPATH . '/_/inc/taxi-licensing-page/quick-links.php'); ?>
+			<!--Quick Links end  -->
+			
 		</article>
-
 				
 	</div>
 	
@@ -42,5 +48,9 @@ Template Name: Taxi Licensing page template
 	
 </div>
 <!-- Container end  -->
+
+<!-- Social Share buttons -->
+<?php include (STYLESHEETPATH . '/_/inc/global/share-btns.php'); ?>
+<!--Social Share buttons   -->
 
 <?php get_footer(); ?>

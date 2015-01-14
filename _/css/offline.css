@@ -52,6 +52,14 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: subpixel-antialiased;
 }
+.font-slogan {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: italic;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: subpixel-antialiased;
+}
 .txt-gone {
   text-indent: -9999px;
 }

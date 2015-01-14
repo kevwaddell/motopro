@@ -1,5 +1,5 @@
 <?php 
-$packages_page = get_page_by_title('Packages');
+$packages_page = get_page_by_title('Premium Legal Service');
 
 $packages_args = array(
 'sort_column'		=> 'menu_order',
@@ -33,10 +33,11 @@ $offences = get_pages($offences_args );
 
 $company_page = get_page_by_title('About MotoPro');
 $contact_page = get_page_by_title('Request a Callback');
+$team_page = get_page_by_title('MotoPro Team');
 
 $rescources_args = array(
 'sort_column'		=> 'title',
-'include'		=> array($company_page->ID, $contact_page->ID, ),
+'include'		=> array($company_page->ID, $contact_page->ID, $team_page->ID ),
 'sort_order'			=> 'ASC'
 );
 

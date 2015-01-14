@@ -1,9 +1,21 @@
 #quick-links {
-.mag-bot(2);
-
-	@media (min-width: @screen-md) {
+.mag-bot(3);
+	
+	@media (min-width: @screen-lg) {
 	.mag-bot(4);
-	}	
+	}
+	
+	&.with-mag-top {
+	.mag-top(4);	
+	
+		@media (min-width: @screen-sm) {
+		.mag-top(3);
+		}
+	
+		@media (min-width: @screen-md) {
+		.mag-top(3.5);	
+		}
+	}
 }
 
 span.pageflip_popup_link {
@@ -105,6 +117,7 @@ button.icon-header {
 	&.collapsed {
 	.bg-col(@grey);
 	.col(@greyDk);	
+	
 		&:after {
 		content: "\f067";
 		}
@@ -162,6 +175,252 @@ width: 100%;
 			.bg-col(@grey);
 			.col(@greyDk);		
 			}	
+	}
+}
+
+a.c2a-link-btn {
+width: 100%;
+.block;
+.h(6);
+.pad-top(2.7);
+.align-center;
+.bg-col(@grey);
+.col(white);
+.caps;
+.no-text-dec;
+.mag-bot(1);
+.mag-top(1);
+.rounded(12px);
+.border(@greyDker, 0.4);
+.rel;
+-webkit-animation-delay: 1s;
+animation-delay: 1s;
+.transition(0.5s, ease-in-out);
+font-size: 1.1em;
+
+	&.disabled {
+	pointer-events: none;
+	cursor: default;
+	.opacity(0.5);	
+	}
+
+	&.pulse {
+	-webkit-animation-duration: 0.4s;	
+	animation-duration: 0.4s;	
+	}
+  
+	&.icon-btn {
+		
+		i {
+		.block;
+		.abs;
+		left: 50%;
+		.mag-left(-2.5);
+		.top(-2.5);
+		.w(5);
+		.h(5);	
+		.line-h(4);
+		.bg-col(@grey);
+		.border(@greyDker, 0.5);
+		.col(white);
+		.rounded(80px);
+		font-size: 1.7em;
+		.animated;
+		//.bounce;
+		}	
+	}
+	
+	&:hover, &:active, &:focus {
+	.bg-col(@greyDker);	
+	.col(white);
+		
+		&.icon-btn {
+			i {
+			.bg-col(white);
+			.col(@greyDker);
+			.border-col(@greyDker);
+			.bounce;
+			}
+		}
+	}
+	
+	@media (min-width: @screen-sm) {
+	font-size: 1.7em;
+	.line-h(5.2);
+	.pad-top(0);
+	.mag-top(0);
+	
+		&:after {
+		.abs;
+		.block;
+		content: "\f105";
+		font-family: FontAwesome;
+		.right(2);
+		.top(0);
+		.h(5.2);
+		font-size: 1.5em;
+		}
+		
+		&.icon-btn {
+			i {
+			.mag-left(0);
+			.left(1);
+			.top(-1.4);
+			.w(8);
+			.h(8);	
+			.line-h(6);
+			.border-width(1);
+			.rounded(80px);
+			}	
+		}
+	}
+	
+	@media (min-width: @screen-md) {
+	.mag-bot(0);
+	.h(7);
+	.line-h(6.2);
+	font-size: 1.8em;
+	
+		&:after {
+		.h(6.2);
+		}
+		
+		&.icon-btn {
+			i {
+			.top(-1.4);
+			font-size: 1.5em;
+			.w(9);
+			.h(9);	
+			.line-h(6.4);
+			.rounded(90px);
+			.border-width(1.2);
+			}	
+		}
+		
+		&.sml-txt {
+		font-size: 1.6em;	
+		}
+	}
+	
+	@media (min-width: @screen-lg) {
+	.h(9);
+	.line-h(8.2);
+	//.font-size(3);
+	
+		&:after {
+		.w(5);
+		.h(8.2);
+		font-size: 1.5em;
+		}
+		
+		&.icon-btn {
+			i {
+			.top(-1.4);
+			font-size: 2em;
+			.w(11);
+			.h(11);	
+			.line-h(8.4);
+			.rounded(110px);
+			}	
+		}
+	}
+	
+	&.col-grey-dk {
+		
+		.bg-col(@greyDk);
+	
+		i {
+		.bg-col(@greyDk);
+		.col(white);
+		}	
+		
+		&:hover, &:active, &:focus {
+			.bg-col(@greyDker);	
+		
+			i {
+			.bg-col(white);
+			.border-col(@red);
+			.col(@greyDker);
+			}
+		}
+		
+	}
+	
+	&.col-red {
+		
+		.bg-col(@red);
+		
+	
+		i {
+		.bg-col(@red);
+		.col(white);
+		}	
+		
+		&:hover, &:active, &:focus {
+			.bg-col(@greyDker);	
+		
+			i {
+			.bg-col(white);
+			.border-col(@red);
+			.col(@greyDker);
+			}
+		}
+		
+	}
+	
+	&.col-green {
+		
+		.bg-col(@green);
+	
+		i {
+		.bg-col(@green);
+		}	
+		
+		&:hover, &:active, &:focus {	
+		.bg-col(@greyDker);
+			i {
+			.bg-col(white);
+			.col(@green);
+			}
+		}
+		
+	}
+
+	
+	&.col-blue {
+		
+		.bg-col(@blue);
+		
+		i {
+		.bg-col(@blue);
+		}	
+		
+		&:hover, &:active, &:focus {
+		.bg-col(@greyDker);
+			i {
+			.bg-col(white);
+			.col(@blue);
+			}
+		}
+		
+	}
+	
+	&.col-orange {
+		
+		.bg-col(@orange);
+	
+		i {
+		.bg-col(@orange);
+		}	
+		
+		&:hover, &:active, &:focus {
+		.bg-col(@greyDker);
+			i {
+			.bg-col(white);
+			.col(@orange);
+			}
+		}
+		
 	}
 }
 
@@ -510,25 +769,31 @@ button.collapse-btn {
 width: 100%;
 .no-rounded;
 .no-border;
-.pad(1;4;1;4);
+.pad-all(1);
 .bg-col(@greyDk);
 .col(white);
 .min-h(4);
 .rel;
-.font-size(2);
+.font-size(1.6);
+.mag-bot(1);
+
+	@media (min-width: @screen-sm) {
+	.font-size(2);
+	}
+	
 	&:after {
-	.abs;
+	.fright;
 	.none;
-	.top(0);
-	.right(0);	
 	content: "\f068";
 	font-family: FontAwesome;
-	.w(4.8);
-	.h(4.8);
-	font-size: 0.8em;
-	.line-h(4.8);
+	.font-size(1.6);
 	.align-center;
 	.col(@red);
+	.line-h(2.5);
+		@media (min-width: @screen-sm) {
+		.line-h(2.9);	
+		.font-size(2);
+		}
 	}
 	
 	&:hover, &:active, &:focus {

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- Large banner  -->
-<?php include (STYLESHEETPATH . '/_/inc/home-page/banner-img.php'); ?>
+<?php include (STYLESHEETPATH . '/_/inc/home-page/banner-img-static.php'); ?>
 <!--Large banner end  -->
 
 <!-- Container  -->
@@ -20,17 +20,21 @@
 <?php endwhile; ?>
 <?php endif; ?>
 
+<!-- Quick Links -->
+<?php include (STYLESHEETPATH . '/_/inc/home-page/radio-adverts.php'); ?>
+<!--Quick Links end  -->
+
+<!-- Quick Links -->
+<?php include (STYLESHEETPATH . '/_/inc/home-page/quick-links.php'); ?>
+<!--Quick Links end  -->
+
 <!-- Services -->
 <?php include (STYLESHEETPATH . '/_/inc/home-page/services.php'); ?>
 <!--Services end  -->
 
 <!-- Packages -->
-<?php include (STYLESHEETPATH . '/_/inc/home-page/packages.php'); ?>
+<?php include (STYLESHEETPATH . '/_/inc/home-page/fees.php'); ?>
 <!--Packages end  -->
-
-<!-- Quick Links -->
-<?php include (STYLESHEETPATH . '/_/inc/home-page/quick-links.php'); ?>
-<!--Quick Links end  -->
 
 
 </div>

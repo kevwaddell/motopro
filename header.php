@@ -10,13 +10,12 @@
 
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<?php header('X-UA-Compatible: IE=edge,chrome=1'); ?>
-	
-	<?php if (wp_is_mobile()) { ?>
 	<meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="format-detection" content="telephone=yes">
-		   
+	
+	<?php if (wp_is_mobile()) { ?>  
 	<link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('stylesheet_directory'); ?>/_/img/touch-icon-iphone.png" /> 
 	<link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('stylesheet_directory'); ?>/_/img/touch-icon-ipad.png" /> 
 	<link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('stylesheet_directory'); ?>/_/img/touch-icon-iphone-retina.png" />
@@ -104,7 +103,7 @@
 		
 		<?php if (!is_front_page()) { ?>
 
-		<div class="breadcrumbs">
+		<div class="breadcrumbs<?php echo (wp_is_mobile()) ? ' bc-mobile':''; ?>">
 			<div class="container">
 	    <?php if(function_exists('bcn_display')) { bcn_display();}?>
 	    	</div>

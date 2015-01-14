@@ -87,4 +87,8 @@ $gallery_imgs = get_field('gallery_imgs');
 </div>
 <!-- Container end  -->
 
+<!-- Social Share buttons -->
+<?php include (STYLESHEETPATH . '/_/inc/global/share-btns.php'); ?>
+<!--Social Share buttons   -->
+
 <?php get_footer(); ?>

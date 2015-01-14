@@ -1,16 +1,19 @@
 <?php 
 $services_page = get_page_by_title('Services');
-$packages_page = get_page_by_title('Packages');
+$packages_page = get_page_by_title('Premium Legal Service');
+$fees_page = get_page_by_title('Standard Legal Service');
+$exclude = array($packages_page->ID,$fees_page->ID);
+
 $services_args = array(
 'sort_column' => 'menu_order',
 'parent' => $services_page->ID,
-'exclude'	=> $packages_page->ID,
+'exclude'	=> $exclude,
 'post_type' => 'page'
 );
 $services = get_pages($services_args);
 //echo '<pre>';print_r($packages);echo '</pre>';
  ?>
-<section id="home-services" class="home-panel">
+<section id="services-panel" class="home-panel">
 
 	<h3 class="text-center"><span>Our <?php echo $services_page->post_title; ?></span></h3>
 	

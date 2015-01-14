@@ -1,3 +1,122 @@
+.banner-img-static {
+	
+	.banner-img-wrap {
+	.h(14.5);	
+	.over-hide;
+	.bg-col(@white);
+	.mag-top(-2.5);
+	.rel;
+		
+		//Large banner image large mobile portrait tablet
+		@media (min-width: @screen-sm) {
+		.h(18.9);
+		}
+		
+		//Large banner image tablet landscape small desktop
+		@media (min-width: @screen-md) {
+		.h(24.7);
+		}
+		
+		//Large banner image desktop
+		@media (min-width: @screen-lg) {
+		.h(30);
+		.mag-top(-3);
+		}	
+		
+	}
+	
+	.img {
+	height: 100%;
+	.bg-size(auto 200%);
+	.bg-img("home-banner-img.png?v=2");
+	.bg-repeat(no-repeat);
+	background-position: center center;
+	//background-position: center -120px;
+	
+		@media (min-width: @screen-sm) {
+		.bg-size(auto);
+		background-position: center -120px;
+		}
+	
+		@media (min-width: @screen-md) {
+		background-position: center center;
+		}
+		
+	}
+	
+	.container {
+	height: 100%;	
+	.rel;
+	}
+	
+	.banner-slogan {
+	.rel;
+	.top(0);
+	height: 100%;
+	.bg-size(contain);
+	.bg-img("slogan-xs.png?v=3");
+	.bg-repeat(no-repeat);
+	background-position: center center;
+	.txt-gone;
+	
+		@media (min-width: @screen-sm) {	
+		.bg-img("slogan-sm.png?v=3");
+		}
+	
+		@media (min-width: @screen-md) {
+		.bg-img("slogan-md.png?v=2");
+		}
+	
+		@media (min-width: @screen-lg) {
+		.bg-img("slogan-lg.png?v=2");
+		}
+	}
+	
+	//Banner strip colors
+	.banner-strip {
+	.h(3);
+	.bg-col(@orange);
+	.border-top(@white, 0.3);	
+		
+		//Banner strip colors mobile/tablet
+		@media (min-width: @screen-sm) {
+		.h(4.5);
+		}
+		
+		//Banner strip colors desktop
+		@media (min-width: @screen-lg) {
+		.h(6);
+		}
+		
+		//Banner outer strip
+		.strip {
+		.h(1);
+		.border-bot(@white, 0.3);	
+			
+			//Banner outer strip mobile/tablet
+			@media (min-width: @screen-sm) {
+			.h(1.5);
+			}
+			
+			//Banner outer strip desktop
+			@media (min-width: @screen-lg) {
+			.h(2);
+			}
+		}
+		
+		//Banner strip green
+		.strip-green {
+		.bg-col(@green);	
+		}
+		
+		//Banner strip blue
+		.strip-blue {
+		.bg-col(@blue);	
+		}	
+	}
+	
+}
+
 .banner-img {
 
 	&.banner-img-page {

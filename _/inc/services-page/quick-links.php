@@ -1,7 +1,13 @@
 <?php 
 $contact_page = get_page_by_title("Request a Callback");
+
+$c2a_contact = get_field('global_c2a_conatct', 'options');
+
+if (!$c2a_contact) {
+$c2a_contact = "Call us today for Free Advice";
+}
  ?>
 
-<section id="quick-links mag-bot-0">
-		<a href="<?php echo get_permalink($contact_page->ID); ?>?service=<?php echo urldecode($post->post_title); ?>#callback-request" class="link-btn icon-btn col-red" title="<?php echo $contact_page->post_title; ?>"><i class="fa fa-phone fa-lg"></i><?php echo $contact_page->post_title; ?></a>
+<section id="quick-links">
+		<a href="<?php echo get_permalink($contact_page->ID); ?>" class="c2a-link-btn animated icon-btn col-red" title="<?php echo $c2a_contact; ?>"><i class="fa fa-comments fa-lg"></i><?php echo $c2a_contact ?></a>
 </section>

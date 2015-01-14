@@ -1,52 +1,47 @@
 <?php 
-$packages_pg = get_page_by_title("Packages");
-$packages_pg_content = $packages_pg->post_content;
+$premium_fees_pg = get_page_by_title('Premium Legal Service');
+$standard_fees_pg = get_page_by_title('Standard Legal Service');
 $packages_txt = get_field('package_text');
-$packages = get_pages('sort_column=menu_order&child_of='.$packages_pg->ID);
+$form = get_field('sb_form');
 
-//echo '<pre>';print_r($packages_pg);echo '</pre>';
+$include = array($premium_fees_pg->ID, $standard_fees_pg->ID);
+$fees_args = array (
+'sort_column'	=> 	'menu_order',
+'include'	=> $include
+);
+$fees = get_pages($fees_args);
+
+//echo '<pre>';print_r($form);echo '</pre>';
 ?>
+
+<?php if ($form) { ?>
+<div class="form-box">
+	<h3>Request a call back</h3>
+	
+	<?php gravity_form($form->id, false, true, false, null, true); ?>
+		
+</div>
+<?php } ?>
+
 <div class="fee-info-box">
-	<h3>Our <?php echo $packages_pg->post_title; ?></h3>
+	<h3>Our Fees</h3>
 	
 	<?php if ($packages_txt) { ?>
 	<?php echo $packages_txt; ?>
 	<?php } ?>
 	
-	<?php if ($packages) { ?>
+	<?php if ($fees) { ?>
 	<ul class="packages list-unstyled">
-		<?php foreach ($packages as $package) { 
-		$color = get_field('colour', $package->ID);
-		$package_name = get_field('package_name', $package->ID);	
+		<?php foreach ($fees as $fee) { 
+		$service_title = get_field('service_title', $fee->ID);		
 		?>
 		<li>
-			<a href="<?php echo get_permalink($package->ID); ?>" title="<?php echo $package->post_title; ?>" class="col-<?php echo $color; ?>">
+			<a href="<?php echo get_permalink($fee->ID); ?>" title="<?php bloginfo('name'); ?> <?php echo $fee->post_title; ?>" class="col-grey">
 				<span class="link-icon"><span class="icon-inner"></span></span>
-				<span class="tag"><?php bloginfo('name'); ?></span><span class="name"><?php echo $package_name; ?></span>
+				<span class="tag"><?php bloginfo('name'); ?></span><span class="name"><?php echo $service_title; ?></span>
 			</a>
 		</li>
 		<?php } ?>
 	</ul>
 	<?php } ?>
-</div>
-
-<div class="side-action-btns">		
-<?php 
-$contact_page = get_page_by_title('Request a Callback');
-$sb_links = get_field('sb_links');
-$brochure_link = get_field('brochure_link');
-
-if (!empty($sb_links)) { ?>
-		
-	<?php foreach ($sb_links as $link) { ?>
-	<a href="<?php echo get_permalink($link[page]->ID); ?><?php echo ($link[page]->ID == $contact_page->ID) ? '#callback-request':''; ?>" class="link-btn icon-btn<?php echo ($link[page]->ID == $contact_page->ID) ? ' col-red':''; ?>"><?php if (!empty($link[icon])) { ?><i class="fa <?php echo $link[icon]; ?> fa-lg"></i><?php } ?><?php echo $link[page]->post_title; ?></a>
-	<?php } ?>
-		
-	<?php }  ?>
-	
-	<?php if ($brochure_link) { 
-	$brochure_download = get_field('global_brochure_download', 'option');	
-	?>
-	<a href="<?php echo $brochure_download; ?>" target="_blank" class="link-btn icon-btn"><i class="fa fa-download fa-lg"></i>Download our Brochure</a>
-	<?php }  ?>
 </div>

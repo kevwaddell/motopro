@@ -31,18 +31,17 @@ Template Name: Package page template
 		</div>
 	</article>
 	
+	<!-- Actions  -->
+	<?php include (STYLESHEETPATH . '/_/inc/packages/single-package-actions.php'); ?>
+
+	
 	<?php if (!empty($package_options)) { ?>
 	<!-- Package Options  -->
 	<?php include (STYLESHEETPATH . '/_/inc/packages/single-package-options.php'); ?>
 	
 	<?php }  ?>
-	
-	<!-- Actions  -->
-	<?php include (STYLESHEETPATH . '/_/inc/packages/single-package-actions.php'); ?>
 		
 <?php endwhile; ?>
-<?php else: ?>
-<h2>No posts to display</h2>
 <?php endif; ?>
 
 </div>

@@ -1,6 +1,11 @@
 div.content {
 	.bg-col(white);
 	.pad-bot(2);
+	.rel;
+	
+	.container {
+	.rel;	
+	}
 	
 		@media (min-width: @screen-sm) {
 		.pad-bot(4);
@@ -11,7 +16,7 @@ div.content {
 	.line-h(4);	
 	.h(4);
 	.bg-col(@greyDk);
-	.col(white);
+	.col(white) !important;
 	.mag-bot(2);
 	.font-normal;
 	-webkit-font-smoothing: subpixel-antialiased;
@@ -26,6 +31,39 @@ div.content {
 		}
 	}
 	
+	hr {
+		.rel;
+		.border-top(@grey; 0.1);
+		.mag-top(1.5);
+		.mag-bot(2);
+		.h(0);
+		
+		@media (min-width: @screen-md) {
+		.mag-top(0.5);	
+		}
+		
+		&:before, &:after  {
+		.w(1);
+		.h(1);
+		.top(-0.6);
+		.rounded(10px);
+		.bg-col(@grey);
+		}
+	
+		&:before {
+		content: "";
+		.abs;
+		.left(0);
+		}
+		
+		&:after {
+		content: "";
+		.abs;
+		.right(0);
+		}
+
+	}
+	
 	.topic-list {
 	.pad(1;0;1;0);
 	.border-top(@grey; 0.2);
@@ -34,6 +72,8 @@ div.content {
 	}
 		
 	article.page {
+	.rel;
+	
 		h2 {
 		.font-size(2.5);
 		.line-h(2.5);
@@ -217,12 +257,22 @@ div.content {
 		}
 		
 		#accordion-wrap {
+		.mag-bot(4);
+			
+			@media (min-width: @screen-md) {
+			.mag-bot(0);
+			}
 			.panel {
 			.no-border;
 			.bg-col(transparent);
 			-webkit-box-shadow: none;
 			box-shadow: none;	
 			.no-rounded;
+			.mag-bot(0);
+			}
+			
+			.collapse-panel {
+			.pad-top(0.5);	
 			}
 		}
 		
@@ -244,6 +294,28 @@ div.content {
 			.mag-right(1);
 			}
 			
+		}
+		
+		.wp-caption {
+		.border(@grey; 0.1);
+		.pad-all(1);
+		.mag-bot(1.5);	
+		width: 100% !important;
+			@media (min-width: @screen-sm) {
+			.pad-all(2);	
+			}
+			
+			img {
+			.block;
+			margin: auto;	
+			}
+		}
+		
+		p.wp-caption-text {
+		.pad-top(0.5);
+		.italic;
+		.col(@grey);	
+		.mag-bot(0);
 		}
 		
 		//Ordered list
@@ -276,7 +348,7 @@ div.content {
 		
 		h3, h4, h5, h6 {
 		.font-size(1.6);
-		.col(@grey);
+		.col(@red);
 		.font-normal;	
 		.caps;
 			@media (min-width: @screen-md) {
@@ -292,11 +364,10 @@ div.content {
 	
 	article.home-page {
 	.bg-col(white);
-	.mag-bot(2);
+	.mag-bot(3);
 	
 		@media (min-width: @screen-sm) {
 		.mag-top(-4.5);
-		.mag-bot(3);
 		}
 		
 		@media (min-width: @screen-lg) {

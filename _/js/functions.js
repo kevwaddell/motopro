@@ -28,6 +28,8 @@
 	 
 	}
 	
+	//console.log(event_type);
+	
 	/* Orientation Change */
 	
 	var wasPortrait = -1;
@@ -44,6 +46,105 @@
 	window.addEventListener( 'orientationchange', checkOrientation, false );
 	window.addEventListener( 'resize', checkOrientation, false );
 
+	// CALL TO ACTION BUTTON HOME PAGE 
+	
+	 $('.selectpicker').find('select').selectpicker({'style': 'btn btn-group btn-default', 'width': '100%', 'size': 5});
+	
+	$('a#call-2-action-home').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+		
+		if ($(this).hasClass('bounceIn')) {
+			$(this).removeClass('bounceIn');
+			$(this).find('i').addClass('bounce');	
+		}
+		
+		if ($(this).hasClass('pulse')) {
+		$(this).removeClass('pulse');	
+		}
+		
+	});
+	
+	$('a#call-2-action-home > i').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+		
+	$(this).removeClass('bounce');	
+		
+	});
+	
+	// VIEW RADIO FILES BUTTON 
+	
+	$('body').on(event_type,'a#call-2-action-radio', function(e){
+		
+		//console.log( $("#radio-player"));
+	
+		if ( $('.audio-files').hasClass('closed') ) {
+			$('html, body').animate({scrollTop: ($("#radio-player").offset().top - 20)}, 500);	
+			$('.audio-files').removeClass('closed').addClass('open');
+			$(this).addClass('active');
+		} else {
+			$('.audio-files').removeClass('open').addClass('closed');
+			$('div.mejs-pause').find('button').trigger('click');
+			$('html, body').animate({ scrollTop: 0 }, 500);
+			$(this).removeClass('active');
+		}
+		
+		return false;
+		
+	});
+	
+	// CLOSE AUDIO FILES
+	
+	$('body').on(event_type,'button#close-audio-files', function(e){
+	
+	$('html, body').animate({ scrollTop: 0 }, 500);
+	
+	if ( $('.audio-files').hasClass('open') ) {
+		$('.audio-files').removeClass('open').addClass('closed');
+		$('a#call-2-action-radio').removeClass('active');
+			
+		$('div.mejs-pause').find('button').trigger('click');
+	}
+
+	return false;
+		
+	});
+	
+	//Extra Info Button
+	$('body').on(event_type,'button#extra-info-btn', function(e){
+	
+		if ( $(this).parent().hasClass('info-closed') ) {
+			$(this).parent().removeClass('info-closed').addClass('info-open');
+			$(this).addClass('active');
+		} else {
+			$(this).parent().removeClass('info-open').addClass('info-closed');
+			$(this).removeClass('active');
+		}
+		
+		return false;
+		
+	});
+
+	/* SOCIAL SHARING BUTTONS */
+	$('body').on(event_type,'button#hide-btn', function(e){
+		
+		var parent = $(this).parent();
+	
+		if ( $(parent).hasClass('btns-open') ) {
+		$(parent).removeClass('btns-open').addClass('btns-closed');
+		
+		$(parent).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+		
+			if ($(this).hasClass('mobile-share')) {
+			$(this).css('top', '-40px');
+			} else {
+			$(this).css('left', '-70px');	
+			}
+		
+		});
+
+		}
+		
+		return false;
+		
+	});
 	
 	/* MAIN MENU NAV BUTTON */
 	
@@ -139,14 +240,24 @@
        alwaysVisible: true
     });
     
-     $('.discounts-box-wrap').slimScroll({
+    /*
+ $('.mobile-box').find('.discounts-box-wrap').slimScroll({
        height: 'auto',
        alwaysVisible: true
     });
+*/
     	
 	
 	$(document).ready(function (){
 	
+	});
+	
+	$(window).load(function(e){
+	
+	if ($('a#call-2-action-radio').length == 1) {
+		$('#call-2-action-radio').removeClass('disabled');
+	}
+
 	});
 	
 	$(window).on("resize", function(e){

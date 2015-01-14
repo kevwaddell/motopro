@@ -1,6 +1,8 @@
 <div class="col-sm-6 col-md-4 col-lg-4">
 
-	<?php if ($services) { ?>
+	<?php if ($services) { 
+	$service_title = get_field('service_title', $services->ID);		
+	?>
 		<h3><a href="<?php echo get_permalink($services_page->ID); ?>"><i class="icon fa fa-dashboard"></i><?php echo $services_page->post_title; ?><i class="fa fa-angle-right fa-lg"></i></a></h3>
 	
 		<div class="list-block">
@@ -18,8 +20,10 @@
 	<?php } ?>
 
 
-	<?php if ($packages) { ?>
-		<h3><a href="<?php echo get_permalink($packages_page->ID); ?>"><i class="icon fa fa-cubes"></i><?php echo $packages_page->post_title; ?><i class="fa fa-angle-right fa-lg"></i></a></h3>
+	<?php if ($packages) { 
+	$service_title = get_field('service_title', $packages_page->ID);			
+	?>
+		<h3><a href="<?php echo get_permalink($packages_page->ID); ?>"><i class="icon fa fa-star"></i><?php bloginfo('name'); ?> <?php echo $service_title; ?><i class="fa fa-angle-right fa-lg"></i></a></h3>
 	
 		<div class="list-block">
 	

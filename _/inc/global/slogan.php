@@ -1,0 +1,1 @@
+<div class="slogan"><span>Trust us with <br>your licence</span></div>

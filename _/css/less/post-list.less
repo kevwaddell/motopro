@@ -13,6 +13,7 @@ section.posts-list {
 		.block;
 		.rel;
 		.no-text-dec;
+		.col(@grey);
 		
 		h4 {
 		.col(@greyDk);	
@@ -48,7 +49,7 @@ section.posts-list {
 		}
 		
 			&:hover, &:active, &:focus {
-				
+			.col(@red);	
 				@media (min-width: @screen-md) {
 					&:after {
 					content: "\f105";	
@@ -66,7 +67,7 @@ section.posts-list {
 				}
 				
 				h4 {
-				.col(@red);
+				.col(@grey);
 				}
 				
 				p {

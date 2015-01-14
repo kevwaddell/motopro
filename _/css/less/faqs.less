@@ -118,6 +118,15 @@ section.faq-panels {
 	@media (min-width: @screen-md) {
 	.mag-bot(0);
 	}
+	
+	h3.icon-header {
+	.bg-col(@grey50);
+	.col(@greyDk)!important;	
+	.caps;
+		i {
+		.col(@grey);	
+		}
+	}
 
 	button {
 	.block;
@@ -208,9 +217,16 @@ section.faq-panels {
 	.col(@greyDk);	
 	}
 	
-	p.answer {
+	.answer {
 	.pad-bot(1);	
 	.border-bot(@grey; 0.1);
+	.mag-bot(1);
+	
+		p {
+			&:last-child {
+			.mag-bot(0);	
+			}
+		}
 	
 		&:last-child {
 		.no-border;	
