@@ -38,12 +38,18 @@
 	
 		
 	<?php 
+	global $post;
+	$google_script = get_field('google_script', $post->ID);
 	$google_code_active = get_field('google_code_active', 'options');
 	if ($google_code_active) { 
 		$google_code = get_field('google_code', 'options');
 	?>
 		<?php echo $google_code; ?>
 		
+	<?php } ?>
+	
+	<?php if (!empty($google_script)) { ?>
+		<?php echo $google_script; ?>
 	<?php } ?>
 	
 	<?php 

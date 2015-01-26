@@ -1,6 +1,6 @@
 <?php 
 /*
-Template Name: Thank page template
+Template Name: Thank You page template
 */
  ?>
 
@@ -15,6 +15,8 @@ Template Name: Thank page template
 <?php if ( have_posts() ): while ( have_posts() ) : the_post(); 	?>	
 
 <?php 
+	
+$parent_id = $post->post_parent;
 
 if (isset($_GET['first-name'])) {
 $name = $_GET['first-name'];	
@@ -23,6 +25,10 @@ $name = $_GET['first-name'];
 if (isset($_GET['full-name'])) {
 $split = split(" ", $_GET['full-name']);
 $name = $split[0];	
+}	
+
+if (isset($_GET['redirect'])) {
+$parent_id = $_GET['redirect'];
 }	
 	
 $thank_you_title = get_field('title');
@@ -38,7 +44,7 @@ $thank_you_title = get_field('title');
 						
 						<?php the_content(); ?>
 		
-						<a href="<?php echo get_permalink($post->post_parent) ; ?>" class="link-btn" style="padding-left:10px; width: 300px; margin:auto;" id="reload-form">Continue</a>
+						<a href="<?php echo get_permalink($parent_id); ?>" class="link-btn" style="padding-left:10px; width: 300px; margin:auto;" id="reload-form">Continue</a>
 					</div>
 				</div>
 			</div>

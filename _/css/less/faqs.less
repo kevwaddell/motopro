@@ -110,6 +110,27 @@ section.faq-box {
 	p {
 	.mag-bot(1);	
 	}
+	
+	.faq-group {
+	.border-bot(@grey; 0.1);
+	.pad-bot(1);
+	.mag-bot(2);	
+	
+		&:last-child {
+		.no-border;	
+		.pad-bot(0);
+		.mag-bot(0);
+		}
+	}
+	
+	p.question {
+		.bold;
+		.col(@greyDk);
+		
+		i {
+		.mag-right(0.5);	
+		}
+	}
 }
 
 section.faq-panels {

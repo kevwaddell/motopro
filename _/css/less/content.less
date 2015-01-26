@@ -118,9 +118,10 @@ div.content {
 		}
 		
 		.entry-txt {
-		.mag-bot(4);
+		.mag-bot(0);
 		
 			@media (min-width: @screen-md) {
+			.mag-bot(4);
 			
 				&.with-borders {
 				.rel;
@@ -158,10 +159,14 @@ div.content {
 					}
 				}
 				
+				.slogan {
+				.mag-bot(0);	
+				}
+				
 			}
 			
 			p:last-child {
-			.mag-bot(0);	
+			.mag-bot(1);	
 			}
 	
 		}

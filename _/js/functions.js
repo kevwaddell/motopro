@@ -90,20 +90,34 @@
 		
 	});
 	
+	//GO TO PAGE TOP
+	
+	$('body').on(event_type,'a#call-2-action-radio', function(e){
+		
+		//console.log( $("#radio-player"));
+	
+		if ( $('.audio-files').hasClass('closed') ) {
+			$('html, body').animate({scrollTop: ($("#radio-player").offset().top - 20)}, 500);	
+			$('.audio-files').removeClass('closed').addClass('open');
+			$(this).addClass('active');
+		} else {
+			$('.audio-files').removeClass('open').addClass('closed');
+			$('div.mejs-pause').find('button').trigger('click');
+			$('html, body').animate({ scrollTop: 0 }, 500);
+			$(this).removeClass('active');
+		}
+		
+		return false;
+		
+	});
+	
 	// CLOSE AUDIO FILES
 	
-	$('body').on(event_type,'button#close-audio-files', function(e){
+	$('body').on(event_type,'button#back-2-top', function(e){
 	
-	$('html, body').animate({ scrollTop: 0 }, 500);
-	
-	if ( $('.audio-files').hasClass('open') ) {
-		$('.audio-files').removeClass('open').addClass('closed');
-		$('a#call-2-action-radio').removeClass('active');
-			
-		$('div.mejs-pause').find('button').trigger('click');
-	}
+		$('html, body').animate({ scrollTop: 0 }, 500);
 
-	return false;
+		return false;
 		
 	});
 	
@@ -258,6 +272,26 @@
 		$('#call-2-action-radio').removeClass('disabled');
 	}
 
+	});
+	
+	$(window).scroll(function(e){
+	var scroll = $(window).scrollTop();
+	var header_h = $('.top-bar').outerHeight();
+	var h = $(window).height();
+		if ( scroll > Math.ceil(h/2) ) {
+		$('button#back-2-top').removeClass('hidden').addClass('visible fadeIn');	
+		}
+		
+		if ( scroll <= header_h && $('button#back-2-top').hasClass('visible') ) {
+		$('button#back-2-top').removeClass('fadeIn').addClass('fadeOut');	
+		
+			$('button#back-2-top').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+		
+			$(this).removeClass('visible fadeOut').addClass('hidden');	
+		
+			});
+			
+		}
 	});
 	
 	$(window).on("resize", function(e){

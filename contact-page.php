@@ -28,6 +28,9 @@ $map_marker = get_stylesheet_directory_uri()."/_/img/map-marker.png";
 <div class="container"> 
 
 	<div class="intro">
+		
+	<?php include (STYLESHEETPATH . '/_/inc/global/slogan.php'); ?>
+	
 	<?php the_content() ; ?>
 	</div>
 	

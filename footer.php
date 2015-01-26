@@ -90,6 +90,8 @@
 		</div>
 		<!-- wrapper end -->
 		
+		<button id="back-2-top" class="hidden"><i class="fa fa-chevron-circle-up fa-2x"></i><span class="sr-only">Back to top</span></button>
+		
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('User actions') ) : ?><?php endif; ?>
 		
 		<noscript>
