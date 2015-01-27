@@ -8452,6 +8452,12 @@ div.content .bottom-page-links {
 .profile-box .pb-header a:focus i {
   color: #ea5777;
 }
+.profile-box .social-links {
+  margin-bottom: 20px;
+}
+.profile-box .social-links a {
+  margin-right: 5px;
+}
 section.posts-list article.post,
 section.posts-list article.page {
   padding-bottom: 20px;
