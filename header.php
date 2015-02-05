@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-
-<!--[if lt IE 7 ]> <html class="ie ie6 no-js" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie ie7 no-js" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie ie8 no-js" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie ie9 no-js" <?php language_attributes(); ?>> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
-<!-- the "no-js" class is for Modernizr. -->
+<html <?php language_attributes(); ?> class="no-js" prefix="og: http://ogp.me/ns#">
 <head id="www-motoprolegal-co-uk" data-template-set="motopro-theme">
 
 	<meta charset="<?php bloginfo('charset'); ?>">
@@ -39,6 +33,7 @@
 		
 	<?php 
 	global $post;
+	$freephone_num = get_field('freephone_num', 'option');
 	$google_script = get_field('google_script', $post->ID);
 	$google_code_active = get_field('google_code_active', 'options');
 	if ($google_code_active) { 
@@ -63,7 +58,7 @@
 	
 </head>
 
-<body id="<?php echo $dir ?>" <?php body_class(); ?>>
+<body id="<?php echo $dir ?>" <?php body_class(); ?><?php echo ($google_code_active) ? " onload=\"_googWcmGet('number-link', '".$freephone_num."')\"" : ''; ?>>
 
 <div class="mp-wrapper nav-closed">
 	
@@ -74,9 +69,8 @@
 			
 			<div class="tel">
 				<div class="container">
-					<?php $freephone_num = get_field('freephone_num', 'option');?>
 					<?php if (isset($freephone_num)) { ?>
-					<span>Freephone:</span> <a href="tel:<?php echo str_replace(' ', '', $freephone_num); ?>" onclick="_gaq.push(['_trackEvent', 'Lead', 'ClickToCall']);" title="Call us now"><?php echo $freephone_num; ?></a>
+					<span>Freephone:</span> <a href="tel:<?php echo str_replace(' ', '', $freephone_num); ?>" class="number-link" title="Call us now"><?php echo $freephone_num; ?></a>
 					<?php }  ?>
 				</div>
 			</div>
