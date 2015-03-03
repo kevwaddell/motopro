@@ -14,7 +14,7 @@ $search_query = get_search_query();
 <div class="container">
 
 		<article <?php post_class(); ?>>
-			<h2 class="text-center">You Searched for: "<?php the_search_query(); ?>"</h2>
+			<h1 class="text-center">You Searched for: "<?php the_search_query(); ?>"</h1>
 			<p class="intro text-center">Results: <?php echo $search_count; ?></p>
 			
 			<div class="search-form-wrap">

@@ -13,7 +13,7 @@
 	<div class="col-md-4 col-lg-4">
 	
 	<article <?php post_class(); ?>>
-		<h2><?php echo $news_page->post_title; ?></h2>
+		<h1><?php echo $news_page->post_title; ?></h1>
 		<?php echo $news_page_content; ?>
 	</article>
 		

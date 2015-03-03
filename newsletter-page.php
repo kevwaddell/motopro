@@ -26,7 +26,7 @@ $brochure_link = get_field('brochure_link');
 			<div class="entry-txt with-borders" style="margin-bottom: 40px;">
 				<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-							<h2 class="text-center"><?php the_title(); ?></h2>
+							<h1 class="text-center"><?php the_title(); ?></h1>
 										
 							<?php the_content(); ?>
 							
@@ -65,9 +65,5 @@ $brochure_link = get_field('brochure_link');
 
 </div>
 <!-- Container end  -->
-
-<!-- Social Share buttons -->
-<?php include (STYLESHEETPATH . '/_/inc/global/share-btns.php'); ?>
-<!--Social Share buttons   -->
 
 <?php get_footer(); ?>

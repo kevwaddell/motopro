@@ -11,7 +11,7 @@ $site_map_page = get_page_by_title('Site map');
 <div class="container">
 
 		<article <?php post_class(); ?>>
-			<h2 class="text-center">Sorry! We couldn't find it.</h2>
+			<h1 class="text-center">Sorry! We couldn't find it.</h1>
 				
 				<div class="text-center" style="margin-bottom: 20px;">
 				

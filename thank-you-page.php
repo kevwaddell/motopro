@@ -40,7 +40,7 @@ $thank_you_title = get_field('title');
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 text-center">
 
-						<h2><?php echo $thank_you_title; ?> <?php echo $name; ?>.</h2>
+						<h1><?php echo $thank_you_title; ?> <?php echo $name; ?>.</h1>
 						
 						<?php the_content(); ?>
 		

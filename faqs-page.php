@@ -64,7 +64,7 @@ ksort($related_qs);
  ?>	
 
 	<article <?php post_class(); ?>>
-		<h2 class="text-center"><?php the_title(); ?></h2>
+		<h1 class="text-center"><?php the_title(); ?></h1>
 		
 		<div class="entry-txt with-borders">
 			
@@ -104,9 +104,5 @@ ksort($related_qs);
 	
 </div>
 <!-- Container end  -->
-
-<!-- Social Share buttons -->
-<?php include (STYLESHEETPATH . '/_/inc/global/share-btns.php'); ?>
-<!--Social Share buttons   -->
 
 <?php get_footer(); ?>

@@ -196,4 +196,8 @@ function custom_class($classes, $field, $form){
     }
     return $classes;
 }
+
+if(function_exists('acf_add_options_page')) { 
+	acf_add_options_page();
+}
  ?>

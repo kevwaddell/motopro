@@ -60,7 +60,7 @@ if ($faqs) {
 	<div class="col-md-7 col-md-push-5 col-lg-8 col-lg-push-4">
 	
 		<article <?php post_class($classes); ?>>
-			<h2><?php the_title(); ?></h2>
+			<h1><?php the_title(); ?></h1>
 			<?php the_content(); ?>
 		</article>
 		

@@ -8,8 +8,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="format-detection" content="telephone=yes">
-	
-	<?php if (wp_is_mobile()) { ?>  
+	 
 	<link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('stylesheet_directory'); ?>/_/img/touch-icon-iphone.png" /> 
 	<link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('stylesheet_directory'); ?>/_/img/touch-icon-ipad.png" /> 
 	<link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('stylesheet_directory'); ?>/_/img/touch-icon-iphone-retina.png" />
@@ -22,7 +21,6 @@
     <link href="<?php bloginfo('stylesheet_directory'); ?>/_/img/apple-touch-startup-image-1024x748.png" media="(device-width: 768px) and (orientation: landscape)" rel="apple-touch-startup-image">
     <link href="<?php bloginfo('stylesheet_directory'); ?>/_/img/apple-touch-startup-image-1536x2008.png" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
     <link href="<?php bloginfo('stylesheet_directory'); ?>/_/img/apple-touch-startup-image-2048x1496.png" media="(device-width: 1536px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-	<?php } ?>
 	
 	<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/_/img/favicon.ico">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
@@ -34,7 +32,12 @@
 	<?php 
 	global $post;
 	$freephone_num = get_field('freephone_num', 'option');
-	$google_script = get_field('google_script', $post->ID);
+	$contact_email = get_field('contact_email', 'option');
+	if (wp_is_mobile()) {
+	$freephone_num = get_field('mobile_num', 'option');	
+	}
+	$script_active = get_field('script_active', $post->ID);
+	$script = get_field('google_script', $post->ID);
 	$google_code_active = get_field('google_code_active', 'options');
 	if ($google_code_active) { 
 		$google_code = get_field('google_code', 'options');
@@ -43,8 +46,8 @@
 		
 	<?php } ?>
 	
-	<?php if (!empty($google_script)) { ?>
-		<?php echo $google_script; ?>
+	<?php if ($script_active && !empty($script)) { ?>
+	<?php echo $script; ?>
 	<?php } ?>
 	
 	<?php 
@@ -65,13 +68,26 @@
 	<!-- TOP BAR START -->
 	<section class="top-bar">
 		
-		<header class="site-links">
+		<header class="site-links clearfix">
 			
-			<div class="tel">
+			<div class="contact-bar">
 				<div class="container">
-					<?php if (isset($freephone_num)) { ?>
-					<span>Freephone:</span> <a href="tel:<?php echo str_replace(' ', '', $freephone_num); ?>" class="number-link" title="Call us now"><?php echo $freephone_num; ?></a>
-					<?php }  ?>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="email">
+								<?php if (isset($contact_email)) { ?>
+								<span>Email: </span> <a href="mailto:<?php echo $contact_email; ?>" class="email-link" title="Email us" onclick="ga('send', 'event', 'Email', 'click to email', 'site header');"><?php echo $contact_email; ?></a>
+								<?php }  ?>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="tel">
+								<?php if (isset($freephone_num)) { ?>
+								<span>Freephone:</span> <a href="tel:<?php echo str_replace(' ', '', $freephone_num); ?>" class="number-link" title="Call us"><?php echo $freephone_num; ?></a>
+								<?php }  ?>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			
@@ -81,12 +97,12 @@
 				
 					<div class="col-md-3 col-lg-4">
 				
-						<h1 id="logo">
+						<div id="logo">
 							<a href="<?php echo get_option('home'); ?>/" class="text-hide">
 							<?php bloginfo('name'); ?> - 
 							<?php bloginfo('description'); ?>
 							</a>			
-						</h1>
+						</div>
 						
 						<button id="nav-btn" class="visible-xs visible-sm in-active"><i class="fa fa-bars fa-lg"></i><span class="sr-only">Navigation</span></button>
 					

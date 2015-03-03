@@ -13,7 +13,7 @@
 	<div class="col-md-4 col-lg-4">
 	
 	<article <?php post_class(); ?>>
-		<h2><?php echo $news_page->post_title; ?></h2>
+		<h1><?php echo $news_page->post_title; ?></h1>
 		<?php echo $news_page_content ; ?>
 		
 		<a class="link-btn-sml icon-btn" title="Join our mailing list" href="<?php echo get_permalink($newsletter_pg->ID); ?>"><i class="fa fa-file-text fa-lg"></i>Sign up now </a>

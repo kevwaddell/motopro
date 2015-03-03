@@ -18,7 +18,7 @@ Template Name: Legal Procedures list template
 
 		<article <?php post_class($classes); ?>>
 			
-			<h2 class="with-span text-center"><?php bloginfo('name'); ?> <span><?php echo $service_title; ?></span></h2>
+			<h1 class="with-span text-center"><?php bloginfo('name'); ?> <span><?php echo $service_title; ?></span></h1>
 			
 			<div class="entry-txt with-borders">
 				<div class="row">
@@ -53,9 +53,5 @@ Template Name: Legal Procedures list template
 
 </div>
 <!-- Container end  -->
-
-<!-- Social Share buttons -->
-<?php include (STYLESHEETPATH . '/_/inc/global/share-btns.php'); ?>
-<!--Social Share buttons   -->
 
 <?php get_footer(); ?>

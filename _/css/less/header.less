@@ -1,41 +1,56 @@
 section.top-bar {
 	//.h(11);
 	
+/*
 	@media (min-width: @screen-sm) {
 	.h(11);
 	}
+*/
 	
+/*
 	@media (min-width: @screen-md) {
 	.h(9.5);
 	}
+*/
 	
+/*
 	@media (min-width: @screen-lg) {
 	.h(14);
 	}
+*/
 	
 	header.site-links {
-	.bg-col(white);		
-			.tel {
+	.bg-col(white);	
+			.contact-bar {
 			.bg-col(@grey50);	
 			text-align: center;
-			.caps;
-			.line-h(2.5);
-			.h(2.5);
-			.col(@red);
+			.col(@greyDk);
+			.line-h(3);
+			//.h(3.4);
 			.font-size(1.6);
-				
-				@media (min-width: @screen-md) {
-				text-align: right;
-				}
-				
+			.border-bot(@greyDk; 0.4);
+			
 				@media (min-width: @screen-lg) {
 				.line-h(4);
-				.h(4);
-				.font-size(2.5);
+				//.h(4.4);
+				.font-size(2);
+				}
+			
+				.email {
+					@media (min-width: @screen-md) {
+					text-align: left;
+					}
 				}
 				
+				.tel {
+					@media (min-width: @screen-md) {
+					text-align: right;
+					}
+				}
+				
+				
 				span {
-				.col(@greyDk);
+				.caps;
 				}
 				
 				a {
@@ -57,15 +72,15 @@ section.top-bar {
 			
 				@media (min-width: @screen-md) { 
 				.rel;
-				.mag-top(-2.5);
-				.mag-bot(-2.5);
+				//.mag-top(-3);
+				//.mag-bot(-2.5);
 				width: 100%;
 				z-index: 10;
 				}
 				
 				@media (min-width: @screen-lg) { 
-				.mag-top(-4);
-				.mag-bot(-3);
+				//.mag-top(-4);
+				//.mag-bot(-3);
 				}
 				
 				//logo link mobile
@@ -85,7 +100,6 @@ section.top-bar {
 					.bg-img("motopro-logo.png");
 					.h(7.5);	
 					width: 100%;
-					background-position: center center;	
 					}
 					
 					@media (min-width: @screen-lg) {
@@ -134,11 +148,10 @@ section.top-bar {
 	.line-h(3.5);
 	.col(white);
 	white-space: nowrap;
-	overflow: hidden;
 	font-size: 0.9em;
 	
 		&.bc-mobile {
-		overflow-x: auto;	
+		overflow-x: scroll;	
 		}
 	
 		a {
@@ -150,19 +163,14 @@ section.top-bar {
 		}
 		
 		@media (min-width: @screen-sm) {
-		.h(2.5);
-		.line-h(2.5);
-		white-space: normal;
-		overflow-x: inherit;
-		}
-	
-		@media (min-width: @screen-md) {
-		text-align: right;
+		.h(3);
+		.line-h(3);
+		overflow: hidden;
 		}
 	
 		@media (min-width: @screen-lg) {
-		.h(3);
-		.line-h(3);
+		.h(4);
+		.line-h(4);
 		}
 		
 		span.separator {
@@ -170,23 +178,45 @@ section.top-bar {
 		}
 	}
 	
+	.breadcrumbs span[typeof="v:Breadcrumb"]:last-child span[property="v:title"],
+	.breadcrumbs a[property="v:title"] {
+    .in-block;
+    .pad-all(0);
+    vertical-align: middle;
+    .max-w(20);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	}
+	
+	.breadcrumbs span[typeof="v:Breadcrumb"]:last-child span[property="v:title"]:hover,
+	.breadcrumbs a[property="v:title"]:hover {
+    max-width: none;
+    cursor: pointer;
+	}
+	
 }
 
 body#home {
 	
 	section.top-bar {
-		.h(11);
 	
+/*
 		@media (min-width: @screen-sm) {
 		.h(11);
 		}
+*/
 		
+/*
 		@media (min-width: @screen-md) {
 		.h(9.5);
 		}
+*/
 		
+/*
 		@media (min-width: @screen-lg) {
 		.h(14);
 		}
+*/
 	}
 }

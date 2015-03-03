@@ -20,7 +20,7 @@ Template Name: Package page template
 	
 	<article <?php post_class('package-intro'); ?>>
 		<div class="package-icon col-<?php echo $color; ?>"><div class="icon-inner"></div></div>
-		<h2 class="with-span text-center col-<?php echo $color; ?>"><?php bloginfo('name'); ?> <span><?php echo $package_name; ?></span></h2>
+		<h1 class="with-span text-center col-<?php echo $color; ?>"><?php bloginfo('name'); ?> <span><?php echo $package_name; ?></span></h1>
 		
 		<div class="entry-txt with-borders">
 			<div class="row">

@@ -13,10 +13,8 @@
 	
 	<title><?php bloginfo('name'); ?> | <?php echo $this->g_opt['mamo_pagetitle']; ?></title>
 	<meta name="description" content="<?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>" />
-<?php if (wp_is_mobile()) { ?>
 	<meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 	<meta name="format-detection" content="telephone=yes">	   
-<?php } ?>
 
 <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/_/img/favicon.ico">
 

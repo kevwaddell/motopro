@@ -10,7 +10,7 @@
 <?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>		
 	<article <?php post_class('home-page'); ?>>
 	
-		<h2 class="text-center"><?php the_title(); ?></h2>
+		<h1 class="text-center"><?php the_title(); ?></h1>
 		
 		<div class="entry-txt">
 		 <?php the_content(); ?>

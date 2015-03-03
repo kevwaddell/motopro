@@ -168,9 +168,12 @@ max-width: 100% !important;
 	input[type=email],
 	input[type=tel],
 	input[type=number],
-	input[type=password] {
+	input[type=password]
+	{
 	.font-size(1.4);
-	.border(@grey, 0.1);
+	.border(@trans, 0.1);
+	//.no-border;
+	width: 100% !important;
 	
 		&:focus {
 		.border-col(@red);	
@@ -189,7 +192,9 @@ max-width: 100% !important;
 	
 	textarea {
 	.font-size(1.4);
-	.border(@grey, 0.1);
+	.border(@trans, 0.1);
+	//.no-border;
+	width: 100% !important;	
 	
 		&:focus {
 		.border-col(@red);	
@@ -219,6 +224,14 @@ max-width: 100% !important;
 	
 	.gform_heading {
 	.mag-bot(1) !important;	
+	width: 100%;
+	}
+	
+	.ginput_container {
+	width: 100% !important;	
+		input.large, textarea.medium {
+		width: 100% !important;		
+		}
 	}
 	
 	.gform_description {
@@ -235,6 +248,9 @@ max-width: 100% !important;
 	.col(@red) !important;
 	.font-size(1.6) !important;	
 	.mag-bot(2) !important;
+	.no-border;
+	text-align: center;
+	.pad-all(1);
 	}
 	
 	.gfield_label {
@@ -271,6 +287,7 @@ max-width: 100% !important;
 	
 	.gfield_error {
 	width: 100% !important;
+	.pad-left(0);
 	}
 	
 	.gform_footer {
@@ -302,7 +319,7 @@ max-width: 100% !important;
 		
 		input.gform_button {
 		.block;
-		width: 99.2%;
+		width: 100%;
 		.bg-col(@grey);
 		.col(@greyDk);
 		.h(4);
@@ -326,6 +343,10 @@ max-width: 100% !important;
 			}
 			
 		}
+	}
+	
+	.form-disclaimer {
+	.col(white);	
 	}
 	
 }

@@ -28,7 +28,7 @@ $flip_book_id = get_field('flip_book_id');
 	<?php if ( post_password_required() ) : ?>
 		
 	<article <?php post_class(); ?>>
-		<h2 class="text-center">Protected Area</h2>
+		<h1 class="text-center">Protected Area</h1>
 		<div class="message">
 			<?php echo $password_message; ?>
 		</div>

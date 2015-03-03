@@ -32,7 +32,7 @@ $brochure_link = get_field('brochure_link');
 	<div class="col-md-8">
 	
 		<article <?php post_class($classes); ?>>
-			<h2><?php the_title(); ?></h2>
+			<h1><?php the_title(); ?></h1>
 			<?php the_content(); ?>
 			
 			<?php include (STYLESHEETPATH . '/_/inc/global/slogan.php'); ?>
@@ -56,9 +56,5 @@ $brochure_link = get_field('brochure_link');
 	
 </div>
 <!-- Container end  -->
-
-<!-- Social Share buttons -->
-<?php include (STYLESHEETPATH . '/_/inc/global/share-btns.php'); ?>
-<!--Social Share buttons   -->
 
 <?php get_footer(); ?>

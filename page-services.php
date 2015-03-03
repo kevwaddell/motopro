@@ -9,7 +9,7 @@
 <?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>		
 
 		<article <?php post_class($classes); ?>>
-			<h2 class="with-span text-center"><?php bloginfo('name'); ?> <span><?php the_title(); ?></span></h2>
+			<h1 class="with-span text-center"><?php bloginfo('name'); ?> <span><?php the_title(); ?></span></h1>
 			
 			<div class="entry-txt with-borders">
 				<div class="row">

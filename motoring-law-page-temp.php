@@ -28,7 +28,7 @@ $legal_procedures = get_field('ml_legal_procedures');
 	<div class="col-md-8">
 	
 		<article <?php post_class(); ?>>
-			<h2><?php the_title(); ?></h2>
+			<h1><?php the_title(); ?></h1>
 			<?php the_content(); ?>
 			
 			<?php include (STYLESHEETPATH . '/_/inc/global/slogan.php'); ?>
@@ -64,9 +64,5 @@ $legal_procedures = get_field('ml_legal_procedures');
 	
 </div>
 <!-- Container end  -->
-
-<!-- Social Share buttons -->
-<?php include (STYLESHEETPATH . '/_/inc/global/share-btns.php'); ?>
-<!--Social Share buttons   -->
 
 <?php get_footer(); ?>

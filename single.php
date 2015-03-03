@@ -38,7 +38,7 @@ $gallery_imgs = get_field('gallery_imgs');
 				
 				<?php }  ?>
 				
-				<h2 style="margin-top: 0px;"><?php the_title(); ?></h2>
+				<h1 style="margin-top: 0px;"><?php the_title(); ?></h1>
 				
 				<?php the_content(); ?>
 				
@@ -86,9 +86,5 @@ $gallery_imgs = get_field('gallery_imgs');
 
 </div>
 <!-- Container end  -->
-
-<!-- Social Share buttons -->
-<?php include (STYLESHEETPATH . '/_/inc/global/share-btns.php'); ?>
-<!--Social Share buttons   -->
 
 <?php get_footer(); ?>

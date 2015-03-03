@@ -21,7 +21,7 @@ $brochure_link = get_field('brochure_link');
  ?>	
 
 		<article <?php post_class(); ?>>
-			<h2 class="text-center"><?php the_title(); ?></h2>
+			<h1 class="text-center"><?php the_title(); ?></h1>
 			
 			<div class="entry-txt with-borders" style="margin-bottom: 40px;">
 				<div class="row">
