@@ -8037,6 +8037,10 @@ div.content article.page #accordion-wrap .collapse-panel,
 div.content article.post #accordion-wrap .collapse-panel {
   padding-top: 5px;
 }
+div.content article.page p:last-child,
+div.content article.post p:last-child {
+  margin-bottom: 0px;
+}
 div.content article.page ul,
 div.content article.post ul {
   list-style: none;
