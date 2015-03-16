@@ -3140,6 +3140,10 @@ h5 {
     display: inline-block;
   }
 }
+#at4-share {
+  top: 50% !important;
+  margin: -130px 0 0 0 !important;
+}
 .side-share-btns {
   position: fixed;
   top: 50%;
@@ -10582,6 +10586,7 @@ figure.alignnone {
 }
 @media (min-width: 768px) {
   .content .gform_wrapper .top_label li.gfield.gf_left_half {
+    padding-right: 7.5px;
     width: 50%;
   }
 }
@@ -10590,6 +10595,7 @@ figure.alignnone {
 }
 @media (min-width: 768px) {
   .content .gform_wrapper .top_label li.gfield.gf_right_half {
+    padding-left: 7.5px;
     width: 50%;
   }
 }
@@ -10616,7 +10622,7 @@ figure.alignnone {
 .content .gform_wrapper input[type=number],
 .content .gform_wrapper input[type=password] {
   font-size: 14px;
-  border: 1px solid transparent;
+  border: 1px solid #a1a4a7;
   width: 100% !important;
 }
 .content .gform_wrapper input[type=text]:focus,
@@ -10644,7 +10650,7 @@ figure.alignnone {
 }
 .content .gform_wrapper textarea {
   font-size: 14px;
-  border: 1px solid transparent;
+  border: 1px solid #a1a4a7;
   width: 100% !important;
 }
 .content .gform_wrapper textarea:focus {
@@ -10740,7 +10746,7 @@ figure.alignnone {
   content: "\f105";
   font-family: FontAwesome;
   position: absolute;
-  right: 0.8%;
+  right: 0%;
   left: auto;
   top: 10px;
   width: 40px;
@@ -10872,4 +10878,26 @@ form.route-finder input.btn:hover,
 form.route-finder input.btn:active,
 form.route-finder input.btn:focus {
   background-color: #ea5777;
+}
+.content .sidebar .gform_wrapper input[type=text],
+.content .sidebar .gform_wrapper input[type=url],
+.content .sidebar .gform_wrapper input[type=email],
+.content .sidebar .gform_wrapper input[type=tel],
+.content .sidebar .gform_wrapper input[type=number],
+.content .sidebar .gform_wrapper input[type=password] {
+  border: 1px solid transparent;
+}
+.content .sidebar .gform_wrapper input[type=text]:focus,
+.content .sidebar .gform_wrapper input[type=url]:focus,
+.content .sidebar .gform_wrapper input[type=email]:focus,
+.content .sidebar .gform_wrapper input[type=tel]:focus,
+.content .sidebar .gform_wrapper input[type=number]:focus,
+.content .sidebar .gform_wrapper input[type=password]:focus {
+  border-color: #ea5777;
+}
+.content .sidebar .gform_wrapper textarea {
+  border: 1px solid transparent;
+}
+.content .sidebar .gform_wrapper textarea:focus {
+  border-color: #ea5777;
 }
