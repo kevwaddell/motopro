@@ -24,7 +24,7 @@
 
 <?php if ( have_posts() ): ?>	
 
-	<h3 class="icon-header hidden-xs hidden-sm"><i class="fa fa-rss fa-lg"></i> 
+	<h3 class="icon-header hidden-xs hidden-sm"><i class="fa fa-newspaper-o fa-lg"></i> 
 	<?php
 	if ( is_day() ) :
 	printf( __( 'Daily Archives: %s', 'tlwsolicitors' ), get_the_date() );

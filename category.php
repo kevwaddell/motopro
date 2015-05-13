@@ -24,7 +24,7 @@
 
 <?php if ( have_posts() ): ?>	
 
-	<h3 class="icon-header hidden-xs hidden-sm"><i class="fa fa-rss fa-lg"></i> <?php single_cat_title(); ?></h3>
+	<h3 class="icon-header hidden-xs hidden-sm"><i class="fa fa-newspaper-o fa-lg"></i> <?php single_cat_title(); ?></h3>
 	
 	<section class="posts-list">
 	

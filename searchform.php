@@ -1,4 +1,4 @@
-<?php if (is_home() || is_archive()) { ?>
+<?php if (is_home() || is_archive() || is_single()) { ?>
 
 <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
 	<div class="input-group">	

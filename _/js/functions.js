@@ -240,6 +240,17 @@
 		
 	});
 	
+	/* VIEW DETAILS SHOW/HIDE */
+	
+	$('body').on(event_type,'button.view-details-btn', function(e){
+	
+		$(this).parent().toggleClass('open');	
+			
+		return false;
+		
+	});
+
+	
 	 /* FEED SCROLLER 
 	   
 	Adds new styled scroll bars to media feeds   

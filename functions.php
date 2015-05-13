@@ -83,11 +83,21 @@ include (STYLESHEETPATH . '/_/functions/package-options-cpt.php');
 /*  FAQ CPT */
 include (STYLESHEETPATH . '/_/functions/faq-cpt.php');
 
+/*  CASES TUDY CPT */
+include (STYLESHEETPATH . '/_/functions/case-study-cpt.php');
+
+/*  FEEDBACK CPT */
+include (STYLESHEETPATH . '/_/functions/feedback-cpt.php');
+
 /* AFC SAVE POST FUNCTION */
 include (STYLESHEETPATH . '/_/functions/afc_save_post.php');
 
 /* SEND NEWSLETTER TO DOTMAILER */
 include (STYLESHEETPATH . '/_/functions/submit_newsletter.php');
+
+/* YOAST FUNCTIONS */
+include (STYLESHEETPATH . '/_/functions/yoast_functions.php');
+
 
 function add_gf_cap()
 {	
@@ -105,8 +115,8 @@ add_action( 'admin_init', 'add_gf_cap' );
 
 function price_box ($atts, $price = null) {
 	$a = shortcode_atts( array(
-        'txt' => 'A Letter of Mitigation is provided for:',
-        'price' => '500',
+        'txt' => 'Fee:',
+        'price' => 'N/A',
     ), $atts );
     
 	$sc_price = '<div class="price-box">';

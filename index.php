@@ -16,7 +16,13 @@
 		<h1><?php echo $news_page->post_title; ?></h1>
 		<?php echo $news_page_content ; ?>
 		
-		<a class="link-btn-sml icon-btn" title="Join our mailing list" href="<?php echo get_permalink($newsletter_pg->ID); ?>"><i class="fa fa-file-text fa-lg"></i>Sign up now </a>
+		<a class="link-btn-sml icon-btn" title="Join our mailing list" href="<?php echo get_permalink($newsletter_pg->ID); ?>">
+			<i class="fa fa-file-text fa-lg"></i>Sign up now 
+		</a>		
+
+		<a href="<?php bloginfo('rss2_url'); ?>" class="link-btn-sml icon-btn" title="Subscribe to our news feed" target="_blank">
+		<i class="fa fa-rss fa-lg icon"></i> MotoPro news feed
+		</a>
 	</article>
 		
 	<?php get_sidebar(); ?>
@@ -28,7 +34,7 @@
 
 <?php if ( have_posts() ): ?>	
 
-	<h3 class="icon-header hidden-xs hidden-sm"><i class="fa fa-rss fa-lg"></i> Latest News</h3>
+	<h3 class="icon-header hidden-xs hidden-sm"><i class="fa fa-newspaper-o fa-lg"></i> Latest News</h3>
 	
 	<section class="posts-list">
 	

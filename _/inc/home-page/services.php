@@ -1,12 +1,13 @@
 <?php 
 $services_page = get_page_by_title('Services');
-$packages_page = get_page_by_title('Premium Legal Service');
-$fees_page = get_page_by_title('Standard Legal Service');
-$exclude = array($packages_page->ID,$fees_page->ID);
+$ml_page = get_page_by_title('Motoring Law');
+$tl_page = get_page_by_title('Taxi Licensing');
+$las_page = get_page_by_title('Legal Assistance Scheme');
+$include = array($ml_page->ID,$tl_page->ID,$las_page->ID );
 $services_args = array(
 'sort_column' => 'menu_order',
 'parent' => $services_page->ID,
-'exclude'	=> $exclude,
+'include'	=> $include,
 'post_type' => 'page',
 'post_status'	=> 'publish'
 );
