@@ -20,9 +20,10 @@ $posts_per_page = get_query_var("posts_per_page");
  ?>	
 
 		<article <?php post_class(); ?>>
-			<h1 class="text-center"><?php echo get_the_title($case_studies_pg->ID); ?></h1>
 			
 			<?php if (!empty($case_studies_pg_content)) { ?>
+			<h1 class="text-center"><?php echo get_the_title($case_studies_pg->ID); ?></h1>
+			
 			<div class="entry-txt with-borders" style="margin-bottom: 40px;">
 				<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">

@@ -7,7 +7,7 @@
 <div class="container">
 
 <?php 
-$feedback_pg = get_page_by_title("Feedback");	
+$feedback_pg = get_page_by_title("Client Feedback");	
 $feedback_pg_content = $feedback_pg->post_content;
 $content =  apply_filters( 'the_content', $feedback_pg_content );
 
@@ -18,9 +18,10 @@ $posts_per_page = get_query_var("posts_per_page");
  ?>	
 
 		<article <?php post_class(); ?>>
-			<h1 class="text-center">Client <?php echo get_the_title($feedback_pg->ID); ?></h1>
-			
 			<?php if (!empty($feedback_pg_content)) { ?>
+			
+			<h1 class="text-center"><?php echo get_the_title($feedback_pg->ID); ?></h1>
+			
 			<div class="entry-txt with-borders" style="margin-bottom: 40px;">
 				<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
